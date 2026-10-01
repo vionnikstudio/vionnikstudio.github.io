@@ -22,7 +22,7 @@ annonce:
 bandeau:
   - icone: "ecran"
     texte: "Applications natives pour Mac"
-  - icone: "soleil"
+  - icone: "bouclier"
     texte: "Aucune publicité"
   - icone: "crochet"
     texte: "Gratuit ou achat unique"
@@ -54,7 +54,7 @@ principes:
   - icone: "texte"
     titre: "Une chose à la fois"
     texte: "Chaque écran a un rôle évident. On retire les menus cachés, les petites icônes et le vocabulaire technique."
-  - icone: "bouclier"
+  - icone: "soleil"
     titre: "Utiles au quotidien "
     texte: "Gardez les applications de Vionnik Studio à portée de main pour vous simplifier la vie chaque jour."
   - icone: "ecran"
