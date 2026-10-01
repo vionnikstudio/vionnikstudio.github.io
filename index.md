@@ -16,7 +16,7 @@ annonce:
   # site écrit l'annonce tout seul à partir de la fiche du produit.
   surtitre: ""
   titre: ""
-  texte: "La première application de Vionnik place tes images dans le format exact qu'il te faut, sans jamais les déformer. Glisse un dossier entier, choisis le format, c'est fait."
+  texte: "La première application de Vionnik Studio place tes images dans le format exact qu'il te faut, sans jamais les déformer. Glisse un dossier entier, choisis le format, c'est fait."
 
 # ── Bande de points forts (sous l'annonce) ──────────────────────
 bandeau:
@@ -55,8 +55,8 @@ principes:
     titre: "Une chose à la fois"
     texte: "Chaque écran a un rôle évident. On retire les menus cachés, les petites icônes et le vocabulaire technique."
   - icone: "bouclier"
-    titre: "Utile, tous les jours"
-    texte: "Gardez nos applications à portée de main pour en profiter pleinement !"
+    titre: "Pas d'abonnement piège"
+    texte: "Nos applications sont gratuites ou vendues en achat unique. Pas de publicité, pas de compte obligatoire."
   - icone: "ecran"
     titre: "Fait pour le Mac"
     texte: "Des applications natives qui suivent les conventions de macOS et fonctionnent sur les Mac récents."
