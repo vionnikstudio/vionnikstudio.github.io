@@ -22,7 +22,7 @@ annonce:
 bandeau:
   - icone: "ecran"
     texte: "Applications natives pour Mac"
-  - icone: "bouclier"
+  - icone: "soleil"
     texte: "Aucune publicité"
   - icone: "crochet"
     texte: "Gratuit ou achat unique"
