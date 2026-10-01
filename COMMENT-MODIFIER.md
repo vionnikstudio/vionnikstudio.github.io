@@ -177,7 +177,7 @@ Le site s'adapte à n'importe quelle largeur : le logo garde toujours la même h
 
 Pour les champs `icone:` des points forts, des fonctions et des principes :
 
-`dossier` · `grille` · `fond` · `fichier` · `gps` · `texte` · `bouclier` · `cle` · `ecran` · `image` · `recadrer` · `clavier` · `courriel` · `coeur` · `eclair` · `etoile` · `horloge` · `personnes` · `crochet` · `telecharger` · `pinceau` · `icone-app`
+`dossier` · `grille` · `fond` · `fichier` · `gps` · `texte` · `bouclier` · `cle` · `ecran` · `image` · `soleil` · `calendrier` · `main` · `recadrer` · `clavier` · `courriel` · `coeur` · `eclair` · `etoile` · `horloge` · `personnes` · `crochet` · `telecharger` · `pinceau` · `icone-app`
 
 ---
 
