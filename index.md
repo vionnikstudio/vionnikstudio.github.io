@@ -56,7 +56,7 @@ principes:
     texte: "Chaque écran a un rôle évident. On retire les menus cachés, les petites icônes et le vocabulaire technique."
   - icone: "bouclier"
     titre: "Pas d'abonnement piège"
-    texte: "Nos applications sont gratuites ou vendues en achat unique. Pas de publicité, pas de compte obligatoire."
+    texte: "Gardez nos applications à portée de main pour en profiter pleinement !"
   - icone: "ecran"
     titre: "Fait pour le Mac"
     texte: "Des applications natives qui suivent les conventions de macOS et fonctionnent sur les Mac récents."
