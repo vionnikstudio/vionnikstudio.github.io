@@ -7,7 +7,7 @@ Ce site se met en page tout seul. Toi, tu modifies seulement des **fiches de tex
 | Changer l'annonce ou les textes de l'accueil | `index.md`                         |
 | Modifier une application (textes, prix, statut, spécial) | `_produits/nom-du-produit.md` |
 | Ajouter une application                     | copier `modele-produit.md`         |
-| Changer l'adresse courriel ou l'année       | `_config.yml`                      |
+| Changer le nom, le logo, le courriel ou l'année | `_config.yml`                  |
 | Remplacer une image                         | `assets/produits/nom-du-produit/`  |
 
 ---
@@ -43,13 +43,33 @@ Les fiches sont écrites dans un format très simple. Pour ne rien briser :
 
 ## 3. Modifier un texte
 
-1. Sur github.com, ouvre le fichier (par exemple `_produits/picfitbox.md`).
-2. Clique sur le **crayon** ✏️ en haut à droite du fichier.
-3. Modifie le texte.
-4. Clique sur **Commit changes…**, puis encore sur **Commit changes**.
-5. Attends une minute et recharge ton site (Cmd + Maj + R pour forcer le rafraîchissement).
+**Important** : on ne modifie jamais le site lui-même (`ton-nom.github.io`). On modifie le **dépôt**, c'est-à-dire les fichiers rangés sur github.com. Le site se met à jour tout seul ensuite.
 
-Pour voir si la mise à jour est terminée : onglet **Actions** du dépôt. Un rond jaune = en cours, un crochet vert = en ligne, un X rouge = erreur (voir la section 9).
+**Trouver ton dépôt**
+
+1. Va sur **github.com** et connecte-toi (*Sign in*).
+2. Dans la colonne de gauche de la page d'accueil, sous **Top repositories**, clique sur `ton-nom.github.io`.
+   - Ou tape directement l'adresse `github.com/ton-nom/ton-nom.github.io`. **Ajoute-la à tes favoris** : c'est ton « tableau de bord » du site.
+3. Tu arrives sur l'onglet **Code**, avec la liste des fichiers et des dossiers.
+
+**Ouvrir le bon fichier**
+
+| Pour modifier…                  | Clique sur…                              |
+|---------------------------------|------------------------------------------|
+| l'accueil                       | `index.md`                               |
+| PicFitBox (textes, prix, statut, spécial) | le dossier `_produits`, puis `picfitbox.md` |
+| le courriel ou l'année          | `_config.yml`                            |
+| les images de PicFitBox         | `assets` → `produits` → `picfitbox`      |
+
+Astuce : sur la page du dépôt, appuie sur la touche **T** et tape `picfitbox` : GitHub trouve le fichier pour toi.
+
+**Modifier et enregistrer**
+
+1. Le fichier s'affiche (parfois sous forme de tableau). En haut à droite de l'encadré du fichier, clique sur le **crayon** ✏️ (*Edit this file*).
+2. Le texte devient modifiable. Change seulement ce qui est entre guillemets.
+3. En haut à droite, clique sur le bouton vert **Commit changes…**.
+4. Une petite fenêtre s'ouvre : laisse *Commit directly to the main branch* coché et clique encore sur **Commit changes**.
+5. Attends une minute (onglet **Actions** : crochet vert = c'est en ligne), puis recharge ton site avec **Cmd + Maj + R**.
 
 ---
 
@@ -137,7 +157,23 @@ La carte de l'accueil, le lien dans le menu et le lien « Application suivante �
 
 ---
 
-## 9. Les icônes disponibles
+## 9. Changer le logo ou le nom de l'entreprise
+
+**Le nom** (« Vionnik Studio ») : dans `_config.yml`, modifie `title`. Il change partout d'un coup : onglet du navigateur, pied de page, « Une application Vionnik Studio »…
+
+**Le logo** :
+
+1. Prépare un **PNG au fond transparent**, avec le logo **en noir ou très foncé** (le site l'inverse tout seul en blanc en mode sombre).
+2. **Recadre-le au plus près** du dessin, sans marge vide autour : sinon il paraîtra plus petit.
+3. Hauteur conseillée : environ 200 px. La largeur n'a pas d'importance.
+4. Téléverse-le dans `assets/img` (Add file → Upload files), par exemple sous le nom `vionnik-studio.png`.
+5. Dans `_config.yml`, remplace `logo: "vionnik.png"` par `logo: "vionnik-studio.png"`.
+
+Le site s'adapte à n'importe quelle largeur : le logo garde toujours la même hauteur (26 px dans le menu, 17 px dans le pied de page) et ses proportions. Un logo très large est réduit automatiquement pour ne jamais déborder, même sur iPhone.
+
+---
+
+## 10. Les icônes disponibles
 
 Pour les champs `icone:` des points forts, des fonctions et des principes :
 
@@ -145,7 +181,7 @@ Pour les champs `icone:` des points forts, des fonctions et des principes :
 
 ---
 
-## 10. Si quelque chose ne marche plus
+## 11. Si quelque chose ne marche plus
 
 - **Un X rouge dans l'onglet Actions** : il y a presque toujours un guillemet oublié ou un espace en trop au début d'une ligne. Ouvre le fichier que tu viens de modifier et compare avec une ligne voisine.
 - **Revenir en arrière** : ouvre le fichier, clique sur **History**, choisis la version d'avant, copie son contenu et recolle-le.

@@ -17,7 +17,7 @@ ordre: 1                    # position sur l'accueil : 1 = en premier
 # "a-venir"    → bannière « Bientôt » + bouton « M'aviser du lancement »
 # "disponible" → bouton « Acheter » (et « Essai gratuit » si un lien est donné)
 statut: "a-venir"
-sortie: "Novembre 2026"      # affiché tant que l'app est à venir
+sortie: "Dans quelques mois"      # affiché tant que l'app est à venir
 date_lancement: ""                # facultatif, ex. "2027-02-15" : affiche un compte à rebours sur l'accueil
 
 # ── Carte sur l'accueil ─────────────────────────────────────────

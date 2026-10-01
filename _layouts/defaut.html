@@ -44,7 +44,7 @@
 
 <header class="nav">
   <div class="nav-row">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Vionnik, accueil"><img src="{{ '/assets/img/vionnik.png' | relative_url }}" alt="Vionnik" width="62" height="26"></a>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, accueil"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"></a>
     <nav class="nav-links" aria-label="Navigation principale">
       <a href="{{ '/#produits' | relative_url }}">Applications</a>
       {%- for p in produits limit: 3 %}
@@ -62,7 +62,7 @@
 
 <footer>
   <div class="foot-row">
-    <div class="foot-brand"><img src="{{ '/assets/img/vionnik.png' | relative_url }}" alt="Vionnik" width="40" height="17"><span>© {{ site.annee }} Vionnik. Tous droits réservés.</span></div>
+    <div class="foot-brand"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"><span>© {{ site.annee }} {{ site.title }}. Tous droits réservés.</span></div>
     <nav class="foot-links" aria-label="Pied de page">
       <a href="{{ '/#produits' | relative_url }}">Applications</a>
       <a href="{{ '/#studio' | relative_url }}">Le studio</a>

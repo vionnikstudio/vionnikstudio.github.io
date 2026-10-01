@@ -17,7 +17,7 @@ layout: defaut
         <div>
           <div class="title-row">
             <img src="{{ icone_url }}" alt="" width="64" height="64">
-            <div><b>{{ p.nom }}</b><span>{% if p.version %}Version {{ p.version }} · {% endif %}Une application Vionnik</span></div>
+            <div><b>{{ p.nom }}</b><span>{% if p.version %}Version {{ p.version }} · {% endif %}Une application {{ site.title }}</span></div>
           </div>
           <span class="eyebrow">
             {%- if p.statut == "disponible" -%}<span class="live ok">Disponible</span>{%- else -%}<span class="live">Bientôt · {{ p.sortie | default: "Date à venir" }}</span>{%- endif -%}

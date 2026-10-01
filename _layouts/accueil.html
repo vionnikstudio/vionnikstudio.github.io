@@ -39,7 +39,7 @@ layout: defaut
         <a class="btn btn-glass" href="mailto:{{ site.courriel }}?subject={{ 'Avisez-moi du lancement de ' | append: v.nom | uri_escape }}">M’aviser du lancement</a>
         {%- endif %}
       </div>
-      <div class="hero-meta"><span>Vionnik · Studio d’applications pour Mac</span><i></i><span>{{ produits.size }} application{% if produits.size > 1 %}s{% endif %}</span><i></i><span>macOS</span></div>
+      <div class="hero-meta"><span>{{ site.title }} · Applications pour Mac</span><i></i><span>{{ produits.size }} application{% if produits.size > 1 %}s{% endif %}</span><i></i><span>macOS</span></div>
     </div>
     <div class="hero-visual">
       {%- if v.image_principale %}
