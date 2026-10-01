@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{%- if page.nom %}
+{%- assign titre_page = page.nom | append: " · " | append: site.title -%}
+{%- assign desc_page = page.resume | default: page.description -%}
+{%- else %}
+{%- assign titre_page = site.title -%}
+{%- assign desc_page = site.description -%}
+{%- endif %}
+<title>{{ titre_page }}</title>
+<meta name="description" content="{{ desc_page | strip_html | escape }}">
+<meta property="og:title" content="{{ titre_page | escape }}">
+<meta property="og:description" content="{{ desc_page | strip_html | escape }}">
+<meta property="og:type" content="website">
+{%- if page.nom %}
+<meta property="og:image" content="{{ site.url }}{{ '/assets/produits/' | append: page.slug | append: '/' | append: page.icone | relative_url }}">
+{%- endif %}
+<meta name="theme-color" content="#0B1B3B">
+<link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="preload" href="{{ '/assets/polices/bricolage-grotesque.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/polices/dm-sans.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+{%- assign produits = site.produits | sort: "ordre" %}
+
+{%- comment -%} Bandeau des spéciaux : n'apparaît qu'aux dates prévues dans la fiche du produit {%- endcomment -%}
+{%- for p in produits %}
+{%- assign rab = p.rabais | append: "" | remove: "%" | strip | plus: 0 -%}
+{%- assign pn = p.prix | append: "" | replace: ",", "." | remove: "$" | remove: " " | plus: 0 -%}
+{%- if pn <= 0 %}{% assign rab = 0 %}{% endif -%}
+{%- if rab > 0 %}
+<a class="promo-bar" href="{{ p.url | relative_url }}#tarif" data-promo="{% include promo-attr.html p=p %}" hidden>
+  <b>−{{ rab }}&nbsp;%</b>
+  <span>{{ p.rabais_texte | default: "Spécial sur" }} {{ p.nom }}{% if p.rabais_fin %} jusqu’au {% include date-fr.html date=p.rabais_fin %}{% endif %}</span>
+  <u>En profiter →</u>
+</a>
+{%- endif %}
+{%- endfor %}
+
+<header class="nav">
+  <div class="nav-row">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Vionnik, accueil"><img src="{{ '/assets/img/vionnik.png' | relative_url }}" alt="Vionnik" width="62" height="26"></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="{{ '/#produits' | relative_url }}">Applications</a>
+      {%- for p in produits limit: 3 %}
+      <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nom }}</a>
+      {%- endfor %}
+      <a href="{{ '/#studio' | relative_url }}">Le studio</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="{{ '/#contact' | relative_url }}">Nous écrire</a>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer>
+  <div class="foot-row">
+    <div class="foot-brand"><img src="{{ '/assets/img/vionnik.png' | relative_url }}" alt="Vionnik" width="40" height="17"><span>© {{ site.annee }} Vionnik. Tous droits réservés.</span></div>
+    <nav class="foot-links" aria-label="Pied de page">
+      <a href="{{ '/#produits' | relative_url }}">Applications</a>
+      <a href="{{ '/#studio' | relative_url }}">Le studio</a>
+      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="toast" role="status" id="toast" hidden>
+  <div><b>Redirection vers la plateforme d’achat…</b><span id="toast-texte">La boutique en ligne sera bientôt branchée.</span></div>
+  <button type="button" id="toast-fermer" aria-label="Fermer">×</button>
+</div>
+
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+</body>
+</html>

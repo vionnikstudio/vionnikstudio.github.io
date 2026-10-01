@@ -1,0 +1,168 @@
+---
+layout: defaut
+---
+{%- comment -%}
+  Gabarit commun à TOUTES les pages produits.
+  Le contenu vient de la fiche du produit, dans le dossier _produits.
+{%- endcomment -%}
+{%- assign p = page -%}
+{%- assign img = '/assets/produits/' | append: p.slug | append: '/' -%}
+{%- assign icone_url = img | append: p.icone | relative_url -%}
+<div class="v-produit" style="--p:{{ p.couleur | default: '#2874E2' }}">
+
+  <section class="hero produit">
+    <div class="wrap">
+      <a class="crumb" href="{{ '/#produits' | relative_url }}">← Toutes les applications</a>
+      <div class="hero-grid">
+        <div>
+          <div class="title-row">
+            <img src="{{ icone_url }}" alt="" width="64" height="64">
+            <div><b>{{ p.nom }}</b><span>{% if p.version %}Version {{ p.version }} · {% endif %}Une application Vionnik</span></div>
+          </div>
+          <span class="eyebrow">
+            {%- if p.statut == "disponible" -%}<span class="live ok">Disponible</span>{%- else -%}<span class="live">Bientôt · {{ p.sortie | default: "Date à venir" }}</span>{%- endif -%}
+            <span>{{ p.surtitre }}</span>
+          </span>
+          <h1>{{ p.accroche }}</h1>
+          <p class="hero-sub">{{ p.description }}</p>
+          <div class="hero-ctas">
+            {% include boutons.html p=p style="hero" %}
+            {%- unless p.statut == "disponible" and p.lien_essai and p.lien_essai != "" %}
+            <a class="btn btn-glass" href="#fonctions">Voir les fonctions</a>
+            {%- endunless %}
+          </div>
+          {%- if p.infos %}
+          <div class="hero-meta">{% for i in p.infos %}{% unless forloop.first %}<i></i>{% endunless %}<span>{{ i }}</span>{% endfor %}</div>
+          {%- endif %}
+        </div>
+        {%- if p.image_principale %}
+        <div class="hero-visual">
+          <img class="shot" src="{{ img | append: p.image_principale | relative_url }}" alt="{{ p.image_principale_texte | escape }}" loading="eager">
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- if p.points %}
+  <div class="strip">
+    <div class="wrap strip-row">
+      {%- for pt in p.points %}
+      <div class="strip-item">{% include icone.html nom=pt.icone taille=18 %}{{ pt.texte }}</div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+
+  {%- if p.fonctions %}
+  <section class="sec" id="fonctions">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Fonctions</span>
+        <h2>{{ p.fonctions_titre | default: "Ce que l’application sait faire" }}</h2>
+        {%- if p.fonctions_texte %}<p>{{ p.fonctions_texte }}</p>{% endif %}
+      </div>
+      <div class="grid3">
+        {%- for f in p.fonctions %}
+        <div class="card"><span class="ic ic-p">{% include icone.html nom=f.icone %}</span><h3>{{ f.titre }}</h3><p>{{ f.texte }}</p></div>
+        {%- endfor %}
+      </div>
+      {%- if p.note %}
+      <div class="note"><span class="ic ic-p" style="width:48px;height:48px">{% include icone.html nom="bouclier" %}</span><p>{{ p.note }}</p></div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- for s in p.sections %}
+  {%- assign pair = forloop.index | modulo: 2 %}
+  {%- if s.type == "demo-ajuster-remplir" %}
+  <section class="sec{% if pair == 1 %} tint{% endif %}">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">{{ s.surtitre }}</span><h2>{{ s.titre }}</h2>{% if s.texte %}<p>{{ s.texte }}</p>{% endif %}</div>
+      <div class="fit-demo">
+        <figure><div class="frame fit"><div class="pic"><span class="sun"></span></div></div><figcaption><b>Ajuster</b>Image entière, avec bandes</figcaption></figure>
+        <figure><div class="frame fill"><div class="pic"><span class="sun"></span></div></div><figcaption><b>Remplir</b>Recadrée au format, sans bandes</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  {%- else %}
+  <section class="feature{% if pair == 1 %} tint{% endif %}">
+    <div class="wrap frow{% if pair == 0 %} rev{% endif %}">
+      <div class="ftext">
+        {%- if s.surtitre %}<span class="eyebrow">{{ s.surtitre }}</span>{% endif %}
+        <h2>{{ s.titre }}</h2>
+        {%- if s.texte %}<p>{{ s.texte }}</p>{% endif %}
+        {%- if s.points %}
+        <ul class="flist">
+          {%- for pt in s.points %}<li>{% include icone.html nom="crochet" taille=18 %}{{ pt }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+        {%- if s.details %}
+        <dl class="specs">
+          {%- for d in s.details %}<div class="spec"><dt>{{ d.nom }}</dt><dd>{{ d.valeur }}</dd></div>{% endfor %}
+        </dl>
+        {%- endif %}
+      </div>
+      <div class="fvisual">
+        {%- if s.image %}
+        <img class="{% if s.cadre %}framed{% else %}shot{% endif %}" src="{{ img | append: s.image | relative_url }}" alt="{{ s.image_texte | escape }}" loading="lazy">
+        {%- elsif s.raccourcis %}
+        <div class="keys-box">
+          <div class="keys">
+            {%- for k in s.raccourcis %}<div><kbd>{{ k.touches }}</kbd>{{ k.action }}</div>{% endfor %}
+          </div>
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+
+  <section class="sec tint" id="tarif">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:44px">
+        <span class="eyebrow">Tarif</span>
+        <h2>{{ p.tarif_titre | default: "Toutes les fonctions. Un seul prix." }}</h2>
+        {%- if p.tarif_texte %}<p>{{ p.tarif_texte }}</p>{% endif %}
+      </div>
+      <div class="price-card">
+        {%- assign rab = p.rabais | append: "" | remove: "%" | strip | plus: 0 -%}
+        {%- assign pn = p.prix | append: "" | replace: ",", "." | remove: "$" | remove: " " | plus: 0 -%}
+        {%- if pn <= 0 %}{% assign rab = 0 %}{% endif -%}
+        {%- if rab > 0 %}<span class="promo-flag" data-promo="{% include promo-attr.html p=p %}" hidden>Spécial −{{ rab }}&nbsp;%</span>{% endif %}
+        <img src="{{ icone_url }}" alt="" width="72" height="72">
+        {%- if p.configuration %}<div class="req">{{ p.configuration }}</div>{% endif %}
+        <h3>{{ p.nom }}{% if p.version %} {{ p.version }}{% endif %}</h3>
+        {% include prix.html p=p complet=true %}
+        {%- if p.inclus %}
+        <ul class="plist">
+          {%- for i in p.inclus %}<li>{% include icone.html nom="crochet" taille=18 %}{{ i }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+        {% include boutons.html p=p %}
+        {%- if p.statut != "disponible" %}<div class="fine">{{ p.sortie | default: "Date à venir" }} · Écris-nous pour être avisé</div>{% endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- if p.faq %}
+  <section class="sec">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">FAQ</span><h2>Questions fréquentes</h2></div>
+      <div class="faq-list">
+        {%- for q in p.faq %}
+        <details{% if forloop.first %} open{% endif %}><summary>{{ q.question }}<span class="plus"></span></summary><div class="faq-a">{{ q.reponse }}</div></details>
+        {%- endfor %}
+      </div>
+      {%- assign autres = site.produits | sort: "ordre" | where_exp: "x", "x.url != page.url" %}
+      {%- if autres.size > 0 %}
+      {%- assign suivant = autres | first %}
+      <a class="next" href="{{ suivant.url | relative_url }}"><span class="l"><img src="{{ '/assets/produits/' | append: suivant.slug | append: '/' | append: suivant.icone | relative_url }}" alt=""><span><small>Application suivante</small><b>{{ suivant.nom }}</b></span></span><span class="arr">→</span></a>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+
+</div>

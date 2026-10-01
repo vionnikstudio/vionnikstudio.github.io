@@ -1,0 +1,6 @@
+{%- comment -%} Affiche un montant à la française : 19.9 → « 19,90 $ » {%- endcomment -%}
+{%- assign c = include.valeur | times: 100 | round -%}
+{%- assign d = c | divided_by: 100 -%}
+{%- assign r = c | modulo: 100 -%}
+{%- if r < 10 -%}{%- assign r = r | prepend: "0" -%}{%- endif -%}
+{{- d }},{{ r }}&nbsp;{{ site.devise | default: "$" -}}

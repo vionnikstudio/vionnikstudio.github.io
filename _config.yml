@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────
+#  RÉGLAGES GÉNÉRAUX DU SITE VIONNIK
+#  Modifie seulement le texte entre guillemets.
+#  Après une modification de CE fichier, GitHub met 1 à 2 minutes
+#  à reconstruire le site.
+# ─────────────────────────────────────────────────────────────
+
+title: "Vionnik"
+description: "Vionnik, studio d'applications pour Mac."
+courriel: "bonjour@vionnik.com"
+annee: "2026"
+
+# Adresse complète du site (laisse vide tant que ton nom de domaine
+# n'est pas configuré).
+url: ""
+
+# ───── Ne pas modifier sous cette ligne ─────
+lang: fr
+baseurl: ""
+collections:
+  produits:
+    output: true
+    permalink: /:name/
+defaults:
+  - scope:
+      path: ""
+      type: produits
+    values:
+      layout: produit
+exclude:
+  - COMMENT-MODIFIER.md
+  - modele-produit.md
+  - README.md

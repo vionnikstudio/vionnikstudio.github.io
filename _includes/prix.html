@@ -1,0 +1,25 @@
+{%- assign p = include.p -%}
+{%- assign prix_txt = p.prix | append: "" | strip -%}
+{%- assign prix_num = prix_txt | replace: ",", "." | remove: "$" | remove: " " | plus: 0 -%}
+{%- assign rab = p.rabais | append: "" | remove: "%" | strip | plus: 0 -%}
+{%- assign promo_ok = false -%}
+{%- if prix_num > 0 and rab > 0 -%}{%- assign promo_ok = true -%}{%- endif -%}
+{%- if prix_txt == "" -%}
+  <div class="price"><span class="tbd">Prix à venir</span></div>
+{%- elsif prix_num == 0 -%}
+  <div class="price">Gratuit</div>
+{%- else -%}
+  {%- if promo_ok -%}
+    {%- capture periode %}{% include promo-attr.html p=p %}{% endcapture -%}
+    {%- assign reste = 100 | minus: rab -%}
+    {%- assign nouveau = prix_num | times: reste | divided_by: 100.0 -%}
+    <div class="price" data-promo="{{ periode }}" hidden><s>{% include argent.html valeur=prix_num %}</s><span>{% include argent.html valeur=nouveau %}</span></div>
+    {%- if include.complet -%}
+    <div class="promo-until" data-promo="{{ periode }}" hidden>Spécial −{{ rab }}&nbsp;%{% if p.rabais_fin %} jusqu’au {% include date-fr.html date=p.rabais_fin %}{% endif %}</div>
+    {%- endif -%}
+    <div class="price" data-promo-sinon="{{ periode }}">{% include argent.html valeur=prix_num %}</div>
+  {%- else -%}
+    <div class="price">{% include argent.html valeur=prix_num %}</div>
+  {%- endif -%}
+{%- endif -%}
+{%- if include.complet and p.prix_mention and p.prix_mention != "" -%}<div class="fine">{{ p.prix_mention }}</div>{%- endif -%}

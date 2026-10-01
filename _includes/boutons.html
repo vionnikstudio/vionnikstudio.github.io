@@ -1,0 +1,21 @@
+{%- comment -%}
+  Boutons d'action d'un produit.
+  style="hero" : boutons blancs sur fond foncé ; sinon boutons de couleur.
+{%- endcomment -%}
+{%- assign p = include.p -%}
+{%- if include.style == "hero" -%}{%- assign b1 = "btn btn-white" -%}{%- assign b2 = "btn btn-glass" -%}{%- else -%}{%- assign b1 = "btn btn-primary" -%}{%- assign b2 = "btn btn-ghost" -%}{%- endif -%}
+{%- if p.statut == "disponible" -%}
+  {%- if p.lien_achat and p.lien_achat != "" -%}
+    <a class="{{ b1 }}" href="{{ p.lien_achat }}">Acheter {{ p.nom }}</a>
+  {%- else -%}
+    <button class="{{ b1 }}" type="button" data-achat-simule="{{ p.nom }}">Acheter {{ p.nom }}</button>
+  {%- endif -%}
+  {%- if p.lien_essai and p.lien_essai != "" -%}
+    <a class="{{ b2 }}" href="{{ p.lien_essai }}">Essai gratuit</a>
+  {%- endif -%}
+{%- else -%}
+  <a class="{{ b1 }}" href="mailto:{{ site.courriel }}?subject={{ 'Avisez-moi du lancement de ' | append: p.nom | uri_escape }}">M’aviser du lancement</a>
+{%- endif -%}
+{%- if include.lien_page -%}
+  <a class="{{ b2 }}" href="{{ p.url | relative_url }}">Découvrir {{ p.nom }}</a>
+{%- endif -%}

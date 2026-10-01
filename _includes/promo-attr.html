@@ -1,0 +1,2 @@
+{%- comment -%} Période du spécial, lue par le script pour l'afficher seulement aux bonnes dates {%- endcomment -%}
+{{- include.p.rabais_debut | date: "%Y-%m-%d" }}|{{ include.p.rabais_fin | date: "%Y-%m-%d" -}}

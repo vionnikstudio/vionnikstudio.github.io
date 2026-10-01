@@ -1,0 +1,8 @@
+{%- comment -%} 2026-12-31 → « 31 décembre » {%- endcomment -%}
+{%- if include.date -%}
+{%- assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+{%- assign m = include.date | date: "%-m" | minus: 1 -%}
+{%- assign j = include.date | date: "%-d" -%}
+{%- if j == "1" -%}{%- assign j = "1er" -%}{%- endif -%}
+{{- j }} {{ mois[m] -}}
+{%- endif -%}
