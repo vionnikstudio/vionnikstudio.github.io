@@ -3,7 +3,7 @@ nom: "LeFacteur"
 version: "1.2"
 categorie: "Courriel · Accessibilité"
 couleur: "#1D4ED8"
-icone: "icone.jpg"
+icone: "icone.png"
 ordre: 2
 
 statut: "a-venir"
