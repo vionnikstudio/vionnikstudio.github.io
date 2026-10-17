@@ -75,6 +75,7 @@ sections:
     points:
       - "Avantage 1"
       - "Avantage 2"
+      - "Avantage 3"
     image: "capture-2.webp"
     image_texte: "Description de la capture."
 
