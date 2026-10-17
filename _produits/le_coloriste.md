@@ -23,7 +23,7 @@ resume: "Prélève une couleur. N'importe où."
 
 surtitre: "Elle fait une chose, mais elle le fait bien"
 accroche: "Prélève une couleur. N'importe où."
-description: "Le paragraphe de présentation, sous la grande phrase."
+description: "Une pipette pour Mac qui fonctionne même quand l'app est en arrière-plan. Chaque couleur devient un échantillon nommé, classé par liste, catégorie et projet — prêt à exporter vers Photoshop, macOS ou une planche PDF."
 image_principale: "capture-principale.webp"
 image_principale_texte: "Description de la capture pour les personnes malvoyantes."
 infos:
