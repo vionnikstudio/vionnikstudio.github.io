@@ -38,22 +38,22 @@ points:
   - icone: "eclair"
     texte: "Point fort 3"
 
-prix: ""
+prix: "9.99"
 prix_mention: ""
 configuration: "Pour macOS"
 lien_achat: ""
 lien_essai: ""
 tarif_titre: "Toutes les fonctions. Un seul prix."
-tarif_texte: ""
+tarif_texte: "9.99$"
 inclus:
   - "Ce qui est inclus 1"
   - "Ce qui est inclus 2"
   - "Ce qui est inclus 3"
 
-rabais: ""
-rabais_debut: ""
-rabais_fin: ""
-rabais_texte: ""
+rabais: "15%"
+rabais_debut: "30 novembre 2026"
+rabais_fin: "31 décembre 2026"
+rabais_texte: "15%"
 
 fonctions_titre: "Ce que l'application sait faire"
 fonctions:
