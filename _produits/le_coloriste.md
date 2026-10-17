@@ -10,7 +10,7 @@
 
 nom: "Le Coloriste"
 version: "1.5"
-categorie: "Catégorie · Sous-catégorie"
+categorie: "Test 815"
 couleur: "#1D4ED8"
 icone: "icone.jpg"
 ordre: 2
