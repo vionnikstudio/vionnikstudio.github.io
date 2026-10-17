@@ -14,7 +14,7 @@ annonce:
   produit: "le_coloriste"
   # Les trois lignes suivantes sont facultatives : laisse "" et le
   # site écrit l'annonce tout seul à partir de la fiche du produit.
-  surtitre: ""
+  surtitre: "Les artistes vont l'adorer!"
   titre: ""
   texte: ""
 
