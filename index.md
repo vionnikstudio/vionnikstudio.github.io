@@ -25,7 +25,7 @@ bandeau:
   - icone: "bouclier"
     texte: "Aucune publicité"
   - icone: "crochet"
-    texte: "Gratuit ou achat unique"
+    texte: "À prix abordable"
   - icone: "personnes"
     texte: "Pensées pour tout le monde"
 
