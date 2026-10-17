@@ -16,7 +16,7 @@ annonce:
   # site écrit l'annonce tout seul à partir de la fiche du produit.
   surtitre: ""
   titre: ""
-  texte: "La première application du Studio Vionnik place tes images dans le format exact qu'il te faut, sans jamais les déformer. Glisse un dossier entier, choisis le format, c'est fait."
+  texte: ""
 
 # ── Bande de points forts (sous l'annonce) ──────────────────────
 bandeau:
