@@ -16,7 +16,7 @@ annonce:
   # site écrit l'annonce tout seul à partir de la fiche du produit.
   surtitre: "Les artistes vont l'adorer!"
   titre: ""
-  texte: ""
+  texte: "Une pipette pour Mac qui fonctionne même quand l'app est en arrière-plan. Chaque couleur devient un échantillon nommé, classé par liste, catégorie et projet — prêt à exporter vers Photoshop, macOS ou une planche PDF."
 
 # ── Bande de points forts (sous l'annonce) ──────────────────────
 bandeau:
