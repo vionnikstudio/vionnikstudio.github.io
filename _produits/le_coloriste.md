@@ -24,7 +24,7 @@ resume: "Prélève une couleur. N'importe où."
 surtitre: "Les artistes vont l'adorer"
 accroche: "Prélève une couleur. N'importe où."
 description: "Une pipette pour Mac qui fonctionne même quand l'app est en arrière-plan. Chaque couleur devient un échantillon nommé, classé par liste, catégorie et projet — prêt à exporter vers Photoshop, macOS ou une planche PDF."
-image_principale: "capture-principale.jpg"
+image_principale: "capture-principale.png"
 image_principale_texte: "Aperçu de la fenêtre principale avec plusieurs carré de couleurs"
 infos:
   - "Application macOS"
