@@ -6,7 +6,7 @@ couleur: "#1D7FC4"
 icone: "icone-2.png"
 ordre: 3
 
-statut: "a-venir"
+statut: "Bientôt disponible"
 sortie: ""
 date_lancement: "30 novembre 2026"
 
