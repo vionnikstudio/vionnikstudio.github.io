@@ -66,12 +66,12 @@ fonctions:
   - icone: "coeur"
     titre: "Harmonies & contraste"
     texte: "Complémentaire, analogues, triade, et le rapport de contraste WCAG (AA/AAA) avec du texte blanc ou noir."
-note: "<b>Export multi-format </b> JSON, nuancier Adobe (.ase), palette macOS (.clr), image JPG 160 × 100, ou planche PDF par projet."
+note: "<b>Export multi-format </b> - JSON, nuancier Adobe (.ase), palette macOS (.clr), image JPG 160 × 100, ou planche PDF par projet."
 
 sections:
-  - surtitre: "Petit titre"
-    titre: "Grand titre de la section"
-    texte: "Paragraphe d'explication."
+  - surtitre: "DEUX FAÇONS DE PRÉLEVER"
+    titre: "Loupe précise ou aperçu en direct : à toi de choisir."
+    texte: "Ouvre une loupe, clique sur n'importe quel pixel de l'écran — même dans une autre application — et la couleur rejoint aussitôt ton nuancier, prête à nommer."
     points:
       - "Avantage 1"
       - "Avantage 2"
