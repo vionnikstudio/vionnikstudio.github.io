@@ -66,7 +66,7 @@ fonctions:
   - icone: "coeur"
     titre: "Harmonies & contraste"
     texte: "Complémentaire, analogues, triade, et le rapport de contraste WCAG (AA/AAA) avec du texte blanc ou noir."
-note: ""
+note: "Export multi-format - JSON, nuancier Adobe (.ase), palette macOS (.clr), image JPG 160 × 100, ou planche PDF par projet."
 
 sections:
   - surtitre: "Petit titre"
