@@ -19,7 +19,7 @@ statut: "a-venir"
 sortie: ""
 date_lancement: "30 novembre 2026"
 
-resume: "Deux ou trois phrases qui donnent envie, affichées sur la carte de l'accueil."
+resume: "Prélève une couleur. N'importe où."
 
 surtitre: "Ce que fait l'application, en quelques mots"
 accroche: "Une phrase courte et forte."
