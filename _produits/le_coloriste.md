@@ -22,7 +22,7 @@ date_lancement: "30 novembre 2026"
 resume: "Prélève une couleur. N'importe où."
 
 surtitre: "Ce que fait l'application, en quelques mots"
-accroche: "Une phrase courte et forte."
+accroche: "Prélève une couleur. N'importe où."
 description: "Le paragraphe de présentation, sous la grande phrase."
 image_principale: "capture-principale.webp"
 image_principale_texte: "Description de la capture pour les personnes malvoyantes."
