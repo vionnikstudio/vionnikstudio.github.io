@@ -3,7 +3,7 @@ nom: "Le Coloriste"
 version: "1.5.3"
 categorie: "UN NUANCIER, PAS UNE PILE DE CAPTURES"
 couleur: "#1D7FC4"
-icone: "icone.png"
+icone: "icone-2.png"
 ordre: 3
 
 statut: "a-venir"
