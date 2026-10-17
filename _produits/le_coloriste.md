@@ -56,7 +56,7 @@ rabais_fin: "31 décembre 2026"
 rabais_texte: "15%"
 
 fonctions_titre: "Chaque couleur, classée, décrite, prête à ressortir."
-fonctions:
+fonctions12:
   - icone: "etoile"
     titre: "Listes, catégories, projets"
     texte: "Range une couleur dans une liste (« Henri »), une catégorie et un projet. Retrouve-la instantanément par n'importe lequel des trois."
