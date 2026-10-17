@@ -8,16 +8,16 @@
 #  4. Remplace les textes entre guillemets. Supprime les lignes inutiles.
 # ═══════════════════════════════════════════════════════════════
 
-nom: "Nom de l'application"
-version: "1.0"
+nom: "Le Coloriste"
+version: "1.5"
 categorie: "Catégorie · Sous-catégorie"
 couleur: "#1D4ED8"
 icone: "icone.jpg"
 ordre: 2
 
 statut: "a-venir"
-sortie: "Cet hiver"
-date_lancement: ""
+sortie: ""
+date_lancement: "30 novembre 2026"
 
 resume: "Deux ou trois phrases qui donnent envie, affichées sur la carte de l'accueil."
 
