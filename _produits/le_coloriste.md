@@ -10,7 +10,7 @@
 
 nom: "Le Coloriste"
 version: "1.5"
-categorie: "Test 815"
+categorie: "UN NUANCIER, PAS UNE PILE DE CAPTURES"
 couleur: "#1D4ED8"
 icone: "icone.jpg"
 ordre: 2
@@ -56,7 +56,7 @@ rabais_fin: "31 décembre 2026"
 rabais_texte: "15%"
 
 fonctions_titre: "Chaque couleur, classée, décrite, prête à ressortir."
-fonctions12:
+fonctions:
   - icone: "etoile"
     titre: "Listes, catégories, projets"
     texte: "Range une couleur dans une liste (« Henri »), une catégorie et un projet. Retrouve-la instantanément par n'importe lequel des trois."
