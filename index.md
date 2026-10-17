@@ -11,7 +11,7 @@ layout: accueil
 # Indique le nom de la fiche du produit à mettre en vedette
 # (le nom du fichier dans _produits, sans « .md »).
 annonce:
-  produit: "picfitbox"
+  produit: "le_coloriste"
   # Les trois lignes suivantes sont facultatives : laisse "" et le
   # site écrit l'annonce tout seul à partir de la fiche du produit.
   surtitre: ""
