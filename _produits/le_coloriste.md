@@ -21,7 +21,7 @@ date_lancement: "30 novembre 2026"
 
 resume: "Prélève une couleur. N'importe où."
 
-surtitre: "Elle fait une chose, mais elle le fait bien"
+surtitre: "Les artistes vont l'adorer"
 accroche: "Prélève une couleur. N'importe où."
 description: "Une pipette pour Mac qui fonctionne même quand l'app est en arrière-plan. Chaque couleur devient un échantillon nommé, classé par liste, catégorie et projet — prêt à exporter vers Photoshop, macOS ou une planche PDF."
 image_principale: "capture-principale.webp"
