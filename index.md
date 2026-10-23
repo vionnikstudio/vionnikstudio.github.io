@@ -1,66 +1,68 @@
 ---
-title: Studio Vionnik
-permalink: /
+# ═══════════════════════════════════════════════════════════════
+#  PAGE D'ACCUEIL DE VIONNIK
+#  Règle d'or : modifie seulement le texte ENTRE les guillemets " ".
+#  Les cartes des applications se créent toutes seules à partir
+#  des fiches du dossier _produits : rien à faire ici pour elles.
+# ═══════════════════════════════════════════════════════════════
+layout: accueil
+
+# ── Grande annonce en haut de l'accueil ─────────────────────────
+# Indique le nom de la fiche du produit à mettre en vedette
+# (le nom du fichier dans _produits, sans « .md »).
+annonce:
+  produit: "le_coloriste"
+  # Les trois lignes suivantes sont facultatives : laisse "" et le
+  # site écrit l'annonce tout seul à partir de la fiche du produit.
+  surtitre: "Les artistes vont l'adorer!"
+  titre: ""
+  texte: "Une pipette pour Mac qui fonctionne même quand l'app est en arrière-plan. Chaque couleur devient un échantillon nommé, classé par liste, catégorie et projet — prêt à exporter vers Photoshop, macOS ou une planche PDF."
+
+# ── Bande de points forts (sous l'annonce) ──────────────────────
+bandeau:
+  - icone: "ecran"
+    texte: "Applications natives pour Mac"
+  - icone: "bouclier"
+    texte: "Aucune publicité"
+  - icone: "crochet"
+    texte: "À prix abordable"
+  - icone: "personnes"
+    texte: "Pensées pour tout le monde"
+
+# ── Section des applications ────────────────────────────────────
+applications_titre: "Des applications simples, faites pour durer"
+applications_texte: "Chaque application a sa propre identité et sa propre page. Choisis-en une pour tout savoir."
+
+# ── Section « Le studio » ───────────────────────────────────────
+studio_titre: "Vionnik, en trois syllabes"
+studio_texte: "Un éditeur de logiciels indépendant. Une seule marque, des applications très différentes, une même façon de travailler."
+syllabes:
+  - lettres: "VI"
+    titre: "Vision et polyvalence"
+    texte: "Des idées de produit claires, qu'il s'agisse d'un outil créatif ou d'un utilitaire du quotidien."
+  - lettres: "ON"
+    titre: "Usage et accessibilité"
+    texte: "Ça s'ouvre et ça marche. Une ergonomie pensée pour tout le monde, sans mode d'emploi."
+  - lettres: "NIK"
+    titre: "Ingénierie et rigueur"
+    texte: "Du développement soigné, des applications stables et fiables, une version après l'autre."
+deux_n: "<b>Avec deux N.</b> Si tu nous cherches, c'est V-I-O-N-N-I-K. Le double N rend le nom unique, et facile à retrouver."
+
+# ── Section « Nos principes » ───────────────────────────────────
+principes_titre: "Ce qu'on garde en tête à chaque application"
+principes:
+  - icone: "texte"
+    titre: "Une chose à la fois"
+    texte: "Chaque écran a un rôle évident. On retire les menus cachés, les petites icônes et le vocabulaire technique."
+  - icone: "soleil"
+    titre: "Utiles au quotidien"
+    texte: "Gardez les applications de Vionnik Studio à portée de main pour vous simplifier la vie chaque jour."
+  - icone: "ecran"
+    titre: "Fait pour le Mac"
+    texte: "Des applications natives qui suivent les conventions de macOS et fonctionnent sur les Mac récents."
+
+# ── Section « Contact » ─────────────────────────────────────────
+# (L'adresse courriel se change dans _config.yml)
+contact_titre: "Parlons-en"
+contact_texte: "Une question sur une application, une suggestion, une idée ? Écris-nous, on répond nous-mêmes."
 ---
-
-![Studio Vionnik](assets/logo-studio-vionnik.png)
-
-**Studio d'applications pour Mac**
-
-[Le Coloriste](le-coloriste.md) · [Soutien](soutien.md) · [Confidentialité](confidentialite.md) · [English](en/index.md)
-
----
-
-# Des applications simples, faites pour durer.
-
-Studio Vionnik conçoit et publie des applications pour Mac pensées pour les gens qui s'en servent. Des outils natifs, sans publicité, sans abonnement, qui s'ouvrent et qui marchent.
-
----
-
-## Notre application
-
-<img src="assets/le-coloriste-icone.png" alt="Icône du Coloriste" width="96">
-
-### Le Coloriste
-
-**Pipette et nuancier pour Mac · 9,99 $ CAD, achat unique**
-
-Une pipette qui prélève une couleur n'importe où à l'écran, la range dans un nuancier et l'exporte vers Photoshop, macOS ou une planche PDF.
-
-**[Voir la page du Coloriste →](le-coloriste.md)**
-
-*D'autres applications sont en préparation.*
-
----
-
-## Le studio
-
-Un éditeur de logiciels indépendant du Québec. Une seule marque, une même façon de travailler. Vionnik, en trois syllabes :
-
-| | | |
-|---|---|---|
-| **VI** | Vision et polyvalence | Des idées de produit claires, qu'il s'agisse d'un outil créatif ou d'un utilitaire du quotidien. |
-| **ON** | Usage et accessibilité | Ça s'ouvre et ça marche. Une ergonomie pensée pour tout le monde, sans mode d'emploi. |
-| **NIK** | Ingénierie et rigueur | Du développement soigné, des applications stables et fiables, une version après l'autre. |
-
-**Avec deux N.** Si tu nous cherches, c'est V-I-O-N-N-I-K.
-
-## Nos principes
-
-- **Une chose à la fois.** Chaque écran a un rôle évident. Pas de menus cachés ni de vocabulaire technique.
-- **Pas d'abonnement piège.** Achat unique, sans publicité ni compte obligatoire.
-- **Fait pour le Mac.** Des applications natives qui suivent les conventions de macOS.
-
----
-
-## Nous écrire
-
-Une question, une suggestion, une idée ? Écris-nous, on répond nous-mêmes.
-
-**[bonjour@vionnik.com](mailto:bonjour@vionnik.com)**
-
-Besoin d'aide avec une application ? Consulte la page [Soutien](soutien.md).
-
----
-
-<small>© 2026 Studio Vionnik · Québec · [Politique de confidentialité](confidentialite.md) · [Soutien](soutien.md)</small>
