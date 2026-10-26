@@ -106,6 +106,6 @@ faq:
     reponse: "Non. Le Coloriste s'achète une seule fois sur le Mac App Store, sans abonnement ni compte à créer."
   - question: "Fonctionne-t-il avec mon logiciel de dessin ?"
     reponse: "Oui. Le Coloriste prélève les couleurs directement à l'écran : il fonctionne avec Clip Studio Paint, Photoshop, Affinity, Figma, un navigateur web ou n'importe quelle autre application."
-  - question: "Puis-je avoir un nuancier différent pour chaque personnage ?"
-    reponse: "Oui. Crée une liste par personnage (« Henri », « Victor »…) et passe de l'une à l'autre en un clic. Les catégories et les projets t'aident à tout retrouver, même avec des centaines de couleurs."
+  - question: "Puis-je avoir un nuancier différent pour chaque projet ?"
+    reponse: "Oui, autant que tu veux. Une liste peut regrouper les couleurs d'un personnage de BD, d'un décor, de l'image de marque d'un client, d'un site web, d'une séance photo ou même d'une pièce à repeindre. Passe de l'une à l'autre en un clic ; les catégories et les projets t'aident à tout retrouver, même avec des centaines de couleurs."
 ---
