@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-{%- if page.lang == "en" %}{% assign en = true %}{% else %}{% assign en = false %}{% endif -%}
-<html lang="{% if en %}en{% else %}fr{% endif %}">
+{%- comment -%} Langue de la page : « lang: en » dans une page ou une fiche = anglais ; sinon français {%- endcomment -%}
+{%- assign lng = page.lang | default: "fr" -%}
+{%- assign t = site.data.textes[lng] -%}
+<html lang="{{ lng }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -30,7 +32,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-{%- assign produits = site.produits | sort: "ordre" %}
+{%- assign produits = site.produits | where: "lang", lng | sort: "ordre" %}
 
 {%- comment -%} Bandeau des spéciaux : n'apparaît qu'aux dates prévues dans la fiche du produit {%- endcomment -%}
 {%- for p in produits %}
@@ -40,37 +42,27 @@
 {%- if rab > 0 %}
 <a class="promo-bar" href="{{ p.url | relative_url }}#tarif" data-promo="{% include promo-attr.html p=p %}" hidden>
   <b>−{{ rab }}&nbsp;%</b>
-  <span>{{ p.rabais_texte | default: "Spécial sur" }} {{ p.nom }}{% if p.rabais_fin %} jusqu’au {% include date-fr.html date=p.rabais_fin %}{% endif %}</span>
-  <u>En profiter →</u>
+  <span>{{ p.rabais_texte | default: t.promo_defaut }} {{ p.nom }}{% if p.rabais_fin %} {{ t.jusqu_au }} {% include date-fr.html date=p.rabais_fin %}{% endif %}</span>
+  <u>{{ t.promo_profiter }}</u>
 </a>
 {%- endif %}
 {%- endfor %}
 
-{%- comment -%} Lien vers la même page dans l'autre langue (réglable avec « autre_langue » dans une page) {%- endcomment -%}
-{%- if en %}{% assign autre = page.autre_langue | default: "/" %}{% else %}{% assign autre = page.autre_langue | default: "/en/" %}{% endif -%}
+{%- comment -%} Lien vers la même page dans l'autre langue (réglable avec « autre_langue » dans une page ou une fiche) {%- endcomment -%}
+{%- assign autre = page.autre_langue | default: t.autre_langue_defaut -%}
 
 <header class="nav">
   <div class="nav-row">
-    <a class="brand" href="{% if en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="{{ site.title }}"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"></a>
+    <a class="brand" href="{{ t.racine | relative_url }}" aria-label="{{ site.title }}"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"></a>
     <nav class="nav-links" aria-label="Navigation">
-      {%- if en %}
-      <a href="{{ '/en/le-coloriste/' | relative_url }}"{% if page.url == "/en/le-coloriste/" %} aria-current="page"{% endif %}>Le Coloriste</a>
-      <a href="{{ '/en/support/' | relative_url }}"{% if page.url == "/en/support/" %} aria-current="page"{% endif %}>Support</a>
-      <a href="{{ autre | relative_url }}" lang="fr">Français</a>
-      {%- else %}
-      <a href="{{ '/#produits' | relative_url }}">Applications</a>
+      <a href="{{ t.racine | append: '#produits' | relative_url }}">{{ t.menu_applications }}</a>
       {%- for p in produits limit: 3 %}
       <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nom }}</a>
       {%- endfor %}
-      <a href="{{ '/soutien/' | relative_url }}"{% if page.url == "/soutien/" %} aria-current="page"{% endif %}>Soutien</a>
-      <a href="{{ autre | relative_url }}" lang="en">English</a>
-      {%- endif %}
+      <a href="{{ t.soutien_url | relative_url }}"{% if page.url == t.soutien_url %} aria-current="page"{% endif %}>{{ t.menu_soutien }}</a>
+      <a href="{{ autre | relative_url }}" lang="{{ t.autre_langue_code }}">{{ t.autre_langue_nom }}</a>
     </nav>
-    {%- if en %}
-    <a class="btn btn-primary btn-sm" href="mailto:{{ site.courriel }}">Contact us</a>
-    {%- else %}
-    <a class="btn btn-primary btn-sm" href="{{ '/#contact' | relative_url }}">Nous écrire</a>
-    {%- endif %}
+    <a class="btn btn-primary btn-sm" href="{{ t.racine | append: '#contact' | relative_url }}">{{ t.menu_contact }}</a>
   </div>
 </header>
 
@@ -80,27 +72,20 @@
 
 <footer>
   <div class="foot-row">
-    <div class="foot-brand"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"><span>© {{ site.annee }} {{ site.title }}. {% if en %}All rights reserved.{% else %}Tous droits réservés.{% endif %}</span></div>
-    <nav class="foot-links" aria-label="{% if en %}Footer{% else %}Pied de page{% endif %}">
-      {%- if en %}
-      <a href="{{ '/en/le-coloriste/' | relative_url }}">Le Coloriste</a>
-      <a href="{{ '/en/support/' | relative_url }}">Support</a>
-      <a href="{{ '/en/privacy/' | relative_url }}">Privacy</a>
-      <a href="{{ autre | relative_url }}" lang="fr">Français</a>
-      {%- else %}
-      <a href="{{ '/#produits' | relative_url }}">Applications</a>
-      <a href="{{ '/#studio' | relative_url }}">Le studio</a>
-      <a href="{{ '/soutien/' | relative_url }}">Soutien</a>
-      <a href="{{ '/confidentialite/' | relative_url }}">Confidentialité</a>
-      <a href="{{ autre | relative_url }}" lang="en">English</a>
-      {%- endif %}
+    <div class="foot-brand"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"><span>© {{ site.annee }} {{ site.title }}. {{ t.droits }}</span></div>
+    <nav class="foot-links" aria-label="{{ t.pied }}">
+      <a href="{{ t.racine | append: '#produits' | relative_url }}">{{ t.menu_applications }}</a>
+      <a href="{{ t.racine | append: '#studio' | relative_url }}">{{ t.menu_studio }}</a>
+      <a href="{{ t.soutien_url | relative_url }}">{{ t.menu_soutien }}</a>
+      <a href="{{ t.confidentialite_url | relative_url }}">{{ t.menu_confidentialite }}</a>
+      <a href="{{ autre | relative_url }}" lang="{{ t.autre_langue_code }}">{{ t.autre_langue_nom }}</a>
     </nav>
   </div>
 </footer>
 
 <div class="toast" role="status" id="toast" hidden>
-  <div><b>Redirection vers la plateforme d’achat…</b><span id="toast-texte">La boutique en ligne sera bientôt branchée.</span></div>
-  <button type="button" id="toast-fermer" aria-label="Fermer">×</button>
+  <div><b>{{ t.toast_titre }}</b><span id="toast-texte">{{ t.toast_texte }}</span></div>
+  <button type="button" id="toast-fermer" aria-label="{{ t.fermer }}">×</button>
 </div>
 
 <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -6,6 +6,7 @@
 #  des fiches du dossier _produits : rien à faire ici pour elles.
 # ═══════════════════════════════════════════════════════════════
 layout: accueil
+autre_langue: "/en/"
 
 # ── Grande annonce en haut de l'accueil ─────────────────────────
 # Indique le nom de la fiche du produit à mettre en vedette

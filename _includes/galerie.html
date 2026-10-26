@@ -3,11 +3,9 @@
   « galerie » de la fiche (ou de la page). Rien à modifier ici.
 {%- endcomment -%}
 {%- assign diapos = include.items -%}
-{%- if include.langue == "en" -%}
-  {%- assign t_sur = "In pictures" -%}{%- assign t_prec = "Previous image" -%}{%- assign t_suiv = "Next image" -%}{%- assign t_img = "Image" -%}{%- assign t_zone = "Image gallery" -%}
-{%- else -%}
-  {%- assign t_sur = "En images" -%}{%- assign t_prec = "Image précédente" -%}{%- assign t_suiv = "Image suivante" -%}{%- assign t_img = "Image" -%}{%- assign t_zone = "Galerie d'images" -%}
-{%- endif -%}
+{%- assign lng = page.lang | default: "fr" -%}
+{%- assign tg = site.data.textes[lng] -%}
+{%- assign t_sur = tg.en_images -%}{%- assign t_prec = tg.image_prec -%}{%- assign t_suiv = tg.image_suiv -%}{%- assign t_img = tg.image -%}{%- assign t_zone = tg.galerie -%}
 {%- if diapos and diapos.size > 0 %}
 <section class="sec galerie-sec" id="galerie">
   <div class="wrap">

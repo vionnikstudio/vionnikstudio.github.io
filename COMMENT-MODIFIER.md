@@ -11,7 +11,9 @@ Ce site se met en page tout seul. Toi, tu modifies seulement des **fiches de tex
 | Remplacer une image                         | `assets/produits/nom-du-produit/`  |
 | Ajouter une image au diaporama              | `assets/produits/nom-du-produit/galerie/` + la fiche (voir section 8) |
 | Modifier la page Soutien ou Confidentialité | `soutien.md` ou `confidentialite.md` |
-| Modifier les pages en anglais               | le dossier `en`                     |
+| Modifier l'accueil en anglais               | `en/index.md`                       |
+| Modifier une application en anglais         | `_produits/en/nom-du-produit.md`    |
+| Changer un mot fixe (bouton, titre de section) | `_data/textes.yml`               |
 
 ---
 
@@ -173,7 +175,7 @@ galerie:
     legende: "Ta nouvelle légende."
 ```
 
-3. **Fais la même chose en anglais** dans `en/le-coloriste.md` (même nom de fichier, légende en anglais). Les deux pages utilisent le même dossier d'images.
+3. **Fais la même chose en anglais** dans `_produits/en/le-coloriste.md` (même nom de fichier, légende en anglais). Les deux pages utilisent le même dossier d'images.
 
 - L'ordre dans la liste = l'ordre du diaporama.
 - Pour retirer une image, supprime ses 2 lignes dans les deux fiches.
@@ -205,21 +207,42 @@ Pour les champs `icone:` des points forts, des fonctions et des principes :
 
 ---
 
-## 11. Les pages Soutien, Confidentialité et la version anglaise
+## 11. La version anglaise, Soutien et Confidentialité
+
+**Le site anglais a exactement la même mise en page que le site français.** Il se remplit à partir de fichiers jumeaux :
+
+| En français | En anglais |
+|---|---|
+| `index.md` (accueil) | `en/index.md` |
+| `_produits/le-coloriste.md` | `_produits/en/le-coloriste.md` |
+| `soutien.md` | `en/support.md` |
+| `confidentialite.md` | `en/privacy.md` |
+
+- **Règle d'or : quand tu modifies un fichier français, fais la même modification dans son jumeau anglais.** Seuls les textes changent ; les noms d'images, les prix, les dates et les icônes restent identiques.
+- Les petits mots fixes des boutons et des titres (« Acheter », « Questions fréquentes », « Buy », « Frequently asked questions »…) sont tous dans `_data/textes.yml`, en français et en anglais.
+- **Ajouter une application en anglais** : copie sa fiche française dans `_produits/en/`, traduis les textes, et garde en haut ces trois lignes (en adaptant le nom) :
+
+```
+lang: "en"
+permalink: /en/nom-du-produit/
+autre_langue: "/nom-du-produit/"
+```
+
+  Dans la fiche française, ajoute aussi `autre_langue: "/en/nom-du-produit/"`.
+
+**Soutien et Confidentialité** sont des pages de texte simple, sous la ligne `---` du haut du fichier :
+
 
 | Page | Fichier | Adresse |
 |---|---|---|
 | Soutien | `soutien.md` | `/soutien/` |
 | Politique de confidentialité | `confidentialite.md` | `/confidentialite/` |
-| Accueil en anglais | `en/index.md` | `/en/` |
-| Le Coloriste en anglais | `en/le-coloriste.md` | `/en/le-coloriste/` |
 | Support (anglais) | `en/support.md` | `/en/support/` |
 | Privacy Policy (anglais) | `en/privacy.md` | `/en/privacy/` |
 
 - Le haut du fichier (`titre`, `surtitre`, `intro`) remplit la bande foncée en haut de la page.
 - Le texte sous la ligne `---` se met en forme tout seul : `## Titre` fait un titre, `**mot**` met en gras, une ligne qui commence par `- ` fait une liste.
 - `autre_langue` indique la page correspondante dans l'autre langue : c'est là que mènent les liens « English » et « Français ».
-- **Quand tu modifies une page en français, fais la même modification en anglais.**
 - Ce qui est entre crochets `[ ]` dans les deux politiques de confidentialité est à remplacer avant de donner les adresses à Apple.
 
 Pour l'App Store : fiche en français → `/soutien/` et `/confidentialite/` ; fiche en anglais → `/en/support/` et `/en/privacy/`.

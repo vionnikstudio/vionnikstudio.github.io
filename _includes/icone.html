@@ -4,8 +4,8 @@
   cle, ecran, image, soleil, calendrier, main, recadrer, clavier, courriel, coeur, eclair, etoile,
   horloge, personnes, crochet, telecharger, pinceau, icone-app
 {%- endcomment -%}
-{%- assign t = include.taille | default: 22 -%}
-<svg width="{{ t }}" height="{{ t }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- assign taille_icone = include.taille | default: 22 -%}
+<svg width="{{ taille_icone }}" height="{{ taille_icone }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 {%- case include.nom -%}
 {%- when "dossier" -%}<path d="M3 7h7l2 2h9v10H3z"/><path d="M12 12v5M9.5 14.5h5"/>
 {%- when "grille" -%}<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="6" height="10" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/>

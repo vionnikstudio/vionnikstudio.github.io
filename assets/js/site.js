@@ -1,6 +1,7 @@
 /* Vionnik — petits comportements du site (aucune modification nécessaire) */
 (function () {
   "use strict";
+  var en = document.documentElement.lang === "en";
 
   // Date du jour au format AAAA-MM-JJ (heure locale du visiteur)
   var d = new Date();
@@ -27,9 +28,9 @@
     var jour = new Date(aujourdhui + "T00:00:00");
     if (isNaN(cible)) return;
     var n = Math.round((cible - jour) / 86400000);
-    if (n > 1) el.textContent = "Lancement dans " + n + " jours";
-    else if (n === 1) el.textContent = "Lancement demain";
-    else if (n === 0) el.textContent = "Lancement aujourd’hui";
+    if (n > 1) el.textContent = en ? "Launching in " + n + " days" : "Lancement dans " + n + " jours";
+    else if (n === 1) el.textContent = en ? "Launching tomorrow" : "Lancement demain";
+    else if (n === 0) el.textContent = en ? "Launching today" : "Lancement aujourd’hui";
   });
 
   // 3. Bouton « Acheter » simulé (quand aucun lien d'achat n'est encore inscrit)
@@ -40,7 +41,8 @@
     btn.addEventListener("click", function () {
       if (!toast) return;
       document.getElementById("toast-texte").textContent =
-        "La boutique de " + btn.getAttribute("data-achat-simule") + " sera bientôt branchée.";
+        en ? "The store for " + btn.getAttribute("data-achat-simule") + " will be connected soon."
+          : "La boutique de " + btn.getAttribute("data-achat-simule") + " sera bientôt branchée.";
       toast.hidden = false;
       clearTimeout(minuterie);
       minuterie = setTimeout(fermer, 6000);
@@ -60,10 +62,10 @@
         var r = document.createRange();
         r.selectNodeContents(document.getElementById("mail"));
         var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-        sortie.textContent = "Adresse sélectionnée : fais Cmd + C pour la copier.";
+        sortie.textContent = en ? "Address selected: press Cmd + C to copy it." : "Adresse sélectionnée : fais Cmd + C pour la copier.";
       }
       try {
-        navigator.clipboard.writeText(adresse).then(function () { sortie.textContent = "Adresse copiée."; }, repli);
+        navigator.clipboard.writeText(adresse).then(function () { sortie.textContent = en ? "Address copied." : "Adresse copiée."; }, repli);
       } catch (e) { repli(); }
     });
   }

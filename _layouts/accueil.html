@@ -5,18 +5,20 @@ layout: defaut
   Gabarit de la page d'accueil. Les textes viennent de index.md,
   les applications viennent des fiches du dossier _produits.
 {%- endcomment -%}
-{%- assign produits = site.produits | sort: "ordre" -%}
+{%- assign lng = page.lang | default: "fr" -%}
+{%- assign t = site.data.textes[lng] -%}
+{%- assign produits = site.produits | where: "lang", lng | sort: "ordre" -%}
 {%- assign v = produits | where: "slug", page.annonce.produit | first -%}
 {%- unless v %}{% assign v = produits | first %}{% endunless -%}
 
 {%- if v %}
 {%- assign v_img = '/assets/produits/' | append: v.slug | append: '/' -%}
 {%- if v.statut == "disponible" -%}
-  {%- assign def_sur = "Nouvelle application · Maintenant disponible" -%}
-  {%- assign def_titre = v.nom | append: " est arrivé sur Mac." -%}
+  {%- assign def_sur = t.nouvelle_dispo -%}
+  {%- assign def_titre = v.nom | append: t.est_arrive -%}
 {%- else -%}
-  {%- assign def_sur = "Nouvelle application · " | append: v.sortie -%}
-  {%- assign def_titre = v.nom | append: " arrive bientôt sur Mac." -%}
+  {%- assign def_sur = t.nouvelle | append: v.sortie -%}
+  {%- assign def_titre = v.nom | append: t.arrive_bientot -%}
 {%- endif -%}
 {%- assign a_sur = page.annonce.surtitre | default: def_sur -%}
 {%- assign a_titre = page.annonce.titre | default: def_titre -%}
@@ -28,18 +30,18 @@ layout: defaut
       <h1>{{ a_titre }}</h1>
       <p class="hero-sub">{{ a_texte }}</p>
       <div class="hero-ctas">
-        <a class="btn btn-white" href="{{ v.url | relative_url }}">Découvrir {{ v.nom }}</a>
+        <a class="btn btn-white" href="{{ v.url | relative_url }}">{{ t.decouvrir }} {{ v.nom }}</a>
         {%- if v.statut == "disponible" %}
           {%- if v.lien_achat and v.lien_achat != "" %}
-        <a class="btn btn-glass" href="{{ v.lien_achat }}">Acheter</a>
+        <a class="btn btn-glass" href="{{ v.lien_achat }}">{{ t.acheter }}</a>
           {%- else %}
-        <button class="btn btn-glass" type="button" data-achat-simule="{{ v.nom }}">Acheter</button>
+        <button class="btn btn-glass" type="button" data-achat-simule="{{ v.nom }}">{{ t.acheter }}</button>
           {%- endif %}
         {%- else %}
-        <a class="btn btn-glass" href="mailto:{{ site.courriel }}?subject={{ 'Avisez-moi du lancement de ' | append: v.nom | uri_escape }}">M’aviser du lancement</a>
+        <a class="btn btn-glass" href="mailto:{{ site.courriel }}?subject={{ t.aviser_sujet | append: v.nom | uri_escape }}">{{ t.aviser }}</a>
         {%- endif %}
       </div>
-      <div class="hero-meta"><span>{{ site.title }} · Applications pour Mac</span><i></i><span>{{ produits.size }} application{% if produits.size > 1 %}s{% endif %}</span><i></i><span>macOS</span></div>
+      <div class="hero-meta"><span>{{ site.title }} · {{ t.applications_pour_mac }}</span><i></i><span>{{ produits.size }} {% if produits.size > 1 %}{{ t.applications }}{% else %}{{ t.application }}{% endif %}</span><i></i><span>macOS</span></div>
     </div>
     <div class="hero-visual">
       {%- if v.image_principale %}
@@ -49,10 +51,10 @@ layout: defaut
         <img src="{{ v_img | append: v.icone | relative_url }}" alt="" width="48" height="48">
         <span><b>{{ v.nom }}{% if v.version %} {{ v.version }}{% endif %}</b>
           {%- if v.statut == "disponible" -%}
-          <span>Disponible maintenant</span>
+          <span>{{ t.disponible_maintenant }}</span>
           {%- else -%}
           {%- assign dl = v.date_lancement | date: "%Y-%m-%d" -%}
-          <span{% if dl != "" %} class="count" data-compte-a-rebours="{{ dl }}"{% endif %}>Sortie : {{ v.sortie | default: "bientôt" | downcase }}</span>
+          <span{% if dl != "" %} class="count" data-compte-a-rebours="{{ dl }}"{% endif %}>{{ t.sortie }} {% if lng == "en" %}{{ v.sortie | default: t.bientot_min }}{% else %}{{ v.sortie | default: t.bientot_min | downcase }}{% endif %}</span>
           {%- endif -%}
         </span>
       </div>
@@ -74,7 +76,7 @@ layout: defaut
 <section class="sec" id="produits">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Nos applications</span>
+      <span class="eyebrow">{{ t.nos_applications }}</span>
       <h2>{{ page.applications_titre }}</h2>
       <p>{{ page.applications_texte }}</p>
     </div>
@@ -91,15 +93,15 @@ layout: defaut
             <span class="ic"><img src="{{ p_img | append: p.icone | relative_url }}" alt="" width="64" height="64"></span>
             <span class="chips">
               {%- if rab > 0 %}<span class="chip chip-promo" data-promo="{% include promo-attr.html p=p %}" hidden>−{{ rab }}&nbsp;%</span>{% endif %}
-              {%- if p.statut == "disponible" %}<span class="chip chip-p">{% if p.version %}Version {{ p.version }}{% else %}Disponible{% endif %}</span>
-              {%- else %}<span class="chip chip-soon">Bientôt</span>{% endif %}
+              {%- if p.statut == "disponible" %}<span class="chip chip-p">{% if p.version %}{{ t.version }} {{ p.version }}{% else %}{{ t.disponible }}{% endif %}</span>
+              {%- else %}<span class="chip chip-soon">{{ t.bientot }}</span>{% endif %}
             </span>
           </div>
           <h3>{{ p.nom }}</h3>
           <div class="kind">{{ p.categorie }}</div>
           <p>{{ p.resume }}</p>
           {%- if prix_txt != "" %}<div class="pcard-price">{% include prix.html p=p %}</div>{% endif %}
-          <span class="go">{% if p.statut == "disponible" %}Voir la page{% else %}Découvrir {{ p.nom }}{% if p.sortie %} · {{ p.sortie | downcase }}{% endif %}{% endif %} →</span>
+          <span class="go">{% if p.statut == "disponible" %}{{ t.voir_page }}{% else %}{{ t.decouvrir }} {{ p.nom }}{% if p.sortie %} · {% if lng == "en" %}{{ p.sortie }}{% else %}{{ p.sortie | downcase }}{% endif %}{% endif %}{% endif %} →</span>
         </div>
         {%- if p.image_principale %}
         <div class="pcard-shot"><img src="{{ p_img | append: p.image_principale | relative_url }}" alt="" loading="lazy"></div>
@@ -113,7 +115,7 @@ layout: defaut
 <section class="dark" id="studio">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Le studio</span>
+      <span class="eyebrow">{{ t.le_studio }}</span>
       <h2>{{ page.studio_titre }}</h2>
       <p>{{ page.studio_texte }}</p>
     </div>
@@ -131,7 +133,7 @@ layout: defaut
 <section class="sec tint">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Nos principes</span>
+      <span class="eyebrow">{{ t.nos_principes }}</span>
       <h2>{{ page.principes_titre }}</h2>
     </div>
     <div class="grid3">
@@ -145,17 +147,17 @@ layout: defaut
 <section class="sec" id="contact">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:36px">
-      <span class="eyebrow">Contact</span>
+      <span class="eyebrow">{{ t.contact }}</span>
       <h2>{{ page.contact_titre }}</h2>
       <p>{{ page.contact_texte }}</p>
     </div>
     <div class="contact-card">
       <span class="ic ic-blue">{% include icone.html nom="courriel" taille=30 %}</span>
-      <span class="eyebrow" style="color:var(--ink-faint)">Courriel</span>
+      <span class="eyebrow" style="color:var(--ink-faint)">{{ t.courriel }}</span>
       <div class="mail" id="mail">{{ site.courriel }}</div>
       <div class="contact-actions">
-        <button class="btn btn-primary" type="button" id="copier-courriel" data-courriel="{{ site.courriel }}">Copier l’adresse</button>
-        <a class="btn btn-ghost" href="mailto:{{ site.courriel }}">Ouvrir mon courriel</a>
+        <button class="btn btn-primary" type="button" id="copier-courriel" data-courriel="{{ site.courriel }}">{{ t.copier }}</button>
+        <a class="btn btn-ghost" href="mailto:{{ site.courriel }}">{{ t.ouvrir_courriel }}</a>
       </div>
       <div class="copied" id="copie" aria-live="polite"></div>
     </div>

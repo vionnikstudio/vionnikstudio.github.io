@@ -28,6 +28,7 @@ defaults:
       type: produits
     values:
       layout: produit
+      lang: "fr"
 exclude:
   - COMMENT-MODIFIER.md
   - modele-produit.md

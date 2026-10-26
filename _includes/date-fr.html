@@ -1,8 +1,13 @@
-{%- comment -%} 2026-12-31 → « 31 décembre » {%- endcomment -%}
+{%- comment -%} 2026-12-31 → « 31 décembre » en français, « December 31 » en anglais {%- endcomment -%}
 {%- if include.date -%}
-{%- assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
 {%- assign m = include.date | date: "%-m" | minus: 1 -%}
 {%- assign j = include.date | date: "%-d" -%}
+{%- if page.lang == "en" -%}
+{%- assign mois = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
+{{- mois[m] }} {{ j -}}
+{%- else -%}
+{%- assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
 {%- if j == "1" -%}{%- assign j = "1er" -%}{%- endif -%}
 {{- j }} {{ mois[m] -}}
+{%- endif -%}
 {%- endif -%}

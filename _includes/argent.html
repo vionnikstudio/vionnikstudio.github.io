@@ -1,6 +1,10 @@
-{%- comment -%} Affiche un montant à la française : 19.9 → « 19,90 $ » {%- endcomment -%}
+{%- comment -%} Affiche un montant : 19.9 → « 19,90 $ » en français, « $19.90 » en anglais {%- endcomment -%}
 {%- assign c = include.valeur | times: 100 | round -%}
 {%- assign d = c | divided_by: 100 -%}
 {%- assign r = c | modulo: 100 -%}
 {%- if r < 10 -%}{%- assign r = r | prepend: "0" -%}{%- endif -%}
+{%- if page.lang == "en" -%}
+{{- site.devise | default: "$" }}{{ d }}.{{ r -}}
+{%- else -%}
 {{- d }},{{ r }}&nbsp;{{ site.devise | default: "$" -}}
+{%- endif -%}

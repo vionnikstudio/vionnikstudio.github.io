@@ -6,21 +6,23 @@ layout: defaut
   Le contenu vient de la fiche du produit, dans le dossier _produits.
 {%- endcomment -%}
 {%- assign p = page -%}
+{%- assign lng = page.lang | default: "fr" -%}
+{%- assign t = site.data.textes[lng] -%}
 {%- assign img = '/assets/produits/' | append: p.slug | append: '/' -%}
 {%- assign icone_url = img | append: p.icone | relative_url -%}
 <div class="v-produit" style="--p:{{ p.couleur | default: '#2874E2' }}">
 
   <section class="hero produit">
     <div class="wrap">
-      <a class="crumb" href="{{ '/#produits' | relative_url }}">← Toutes les applications</a>
+      <a class="crumb" href="{{ t.racine | append: '#produits' | relative_url }}">{{ t.toutes_applications }}</a>
       <div class="hero-grid">
         <div>
           <div class="title-row">
             <img src="{{ icone_url }}" alt="" width="64" height="64">
-            <div><b>{{ p.nom }}</b><span>{% if p.version %}Version {{ p.version }} · {% endif %}Une application {{ site.title }}</span></div>
+            <div><b>{{ p.nom }}</b><span>{% if p.version %}{{ t.version }} {{ p.version }} · {% endif %}{{ t.une_application }} {{ site.title }}</span></div>
           </div>
           <span class="eyebrow">
-            {%- if p.statut == "disponible" -%}<span class="live ok">Disponible</span>{%- else -%}<span class="live">Bientôt · {{ p.sortie | default: "Date à venir" }}</span>{%- endif -%}
+            {%- if p.statut == "disponible" -%}<span class="live ok">{{ t.disponible }}</span>{%- else -%}<span class="live">{{ t.bientot }} · {{ p.sortie | default: t.date_a_venir }}</span>{%- endif -%}
             <span>{{ p.surtitre }}</span>
           </span>
           <h1>{{ p.accroche }}</h1>
@@ -28,7 +30,7 @@ layout: defaut
           <div class="hero-ctas">
             {% include boutons.html p=p style="hero" %}
             {%- unless p.statut == "disponible" and p.lien_essai and p.lien_essai != "" %}
-            <a class="btn btn-glass" href="#fonctions">Voir les fonctions</a>
+            <a class="btn btn-glass" href="#fonctions">{{ t.voir_fonctions }}</a>
             {%- endunless %}
           </div>
           {%- if p.infos %}
@@ -63,8 +65,8 @@ layout: defaut
   <section class="sec" id="fonctions">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Fonctions</span>
-        <h2>{{ p.fonctions_titre | default: "Ce que l’application sait faire" }}</h2>
+        <span class="eyebrow">{{ t.fonctions }}</span>
+        <h2>{{ p.fonctions_titre | default: t.fonctions_defaut }}</h2>
         {%- if p.fonctions_texte %}<p>{{ p.fonctions_texte }}</p>{% endif %}
       </div>
       <div class="grid3">
@@ -128,15 +130,15 @@ layout: defaut
   <section class="sec tint" id="tarif">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:44px">
-        <span class="eyebrow">Tarif</span>
-        <h2>{{ p.tarif_titre | default: "Toutes les fonctions. Un seul prix." }}</h2>
+        <span class="eyebrow">{{ t.tarif }}</span>
+        <h2>{{ p.tarif_titre | default: t.tarif_defaut }}</h2>
         {%- if p.tarif_texte %}<p>{{ p.tarif_texte }}</p>{% endif %}
       </div>
       <div class="price-card">
         {%- assign rab = p.rabais | append: "" | remove: "%" | strip | plus: 0 -%}
         {%- assign pn = p.prix | append: "" | replace: ",", "." | remove: "$" | remove: " " | plus: 0 -%}
         {%- if pn <= 0 %}{% assign rab = 0 %}{% endif -%}
-        {%- if rab > 0 %}<span class="promo-flag" data-promo="{% include promo-attr.html p=p %}" hidden>Spécial −{{ rab }}&nbsp;%</span>{% endif %}
+        {%- if rab > 0 %}<span class="promo-flag" data-promo="{% include promo-attr.html p=p %}" hidden>{{ t.special }} −{{ rab }}&nbsp;%</span>{% endif %}
         <img src="{{ icone_url }}" alt="" width="72" height="72">
         {%- if p.configuration %}<div class="req">{{ p.configuration }}</div>{% endif %}
         <h3>{{ p.nom }}{% if p.version %} {{ p.version }}{% endif %}</h3>
@@ -147,7 +149,7 @@ layout: defaut
         </ul>
         {%- endif %}
         {% include boutons.html p=p %}
-        {%- if p.statut != "disponible" %}<div class="fine">{{ p.sortie | default: "Date à venir" }} · Écris-nous pour être avisé</div>{% endif %}
+        {%- if p.statut != "disponible" %}<div class="fine">{{ p.sortie | default: t.date_a_venir }} · {{ t.ecris_nous }}</div>{% endif %}
       </div>
     </div>
   </section>
@@ -155,16 +157,16 @@ layout: defaut
   {%- if p.faq %}
   <section class="sec">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">FAQ</span><h2>Questions fréquentes</h2></div>
+      <div class="section-head"><span class="eyebrow">{{ t.faq }}</span><h2>{{ t.questions }}</h2></div>
       <div class="faq-list">
         {%- for q in p.faq %}
         <details{% if forloop.first %} open{% endif %}><summary>{{ q.question }}<span class="plus"></span></summary><div class="faq-a">{{ q.reponse }}</div></details>
         {%- endfor %}
       </div>
-      {%- assign autres = site.produits | sort: "ordre" | where_exp: "x", "x.url != page.url" %}
+      {%- assign autres = site.produits | where: "lang", lng | sort: "ordre" | where_exp: "x", "x.url != page.url" %}
       {%- if autres.size > 0 %}
       {%- assign suivant = autres | first %}
-      <a class="next" href="{{ suivant.url | relative_url }}"><span class="l"><img src="{{ '/assets/produits/' | append: suivant.slug | append: '/' | append: suivant.icone | relative_url }}" alt=""><span><small>Application suivante</small><b>{{ suivant.nom }}</b></span></span><span class="arr">→</span></a>
+      <a class="next" href="{{ suivant.url | relative_url }}"><span class="l"><img src="{{ '/assets/produits/' | append: suivant.slug | append: '/' | append: suivant.icone | relative_url }}" alt=""><span><small>{{ t.application_suivante }}</small><b>{{ suivant.nom }}</b></span></span><span class="arr">→</span></a>
       {%- endif %}
     </div>
   </section>
