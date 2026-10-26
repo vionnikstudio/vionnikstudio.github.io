@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+{%- if page.lang == "en" %}{% assign en = true %}{% else %}{% assign en = false %}{% endif -%}
+<html lang="{% if en %}en{% else %}fr{% endif %}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 {%- if page.nom %}
 {%- assign titre_page = page.nom | append: " · " | append: site.title -%}
 {%- assign desc_page = page.resume | default: page.description -%}
+{%- elsif page.titre %}
+{%- assign titre_page = page.titre | append: " · " | append: site.title -%}
+{%- assign desc_page = page.intro | default: site.description -%}
 {%- else %}
 {%- assign titre_page = site.title -%}
 {%- assign desc_page = site.description -%}
@@ -42,17 +46,31 @@
 {%- endif %}
 {%- endfor %}
 
+{%- comment -%} Lien vers la même page dans l'autre langue (réglable avec « autre_langue » dans une page) {%- endcomment -%}
+{%- if en %}{% assign autre = page.autre_langue | default: "/" %}{% else %}{% assign autre = page.autre_langue | default: "/en/" %}{% endif -%}
+
 <header class="nav">
   <div class="nav-row">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, accueil"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"></a>
-    <nav class="nav-links" aria-label="Navigation principale">
+    <a class="brand" href="{% if en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="{{ site.title }}"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"></a>
+    <nav class="nav-links" aria-label="Navigation">
+      {%- if en %}
+      <a href="{{ '/en/le-coloriste/' | relative_url }}"{% if page.url == "/en/le-coloriste/" %} aria-current="page"{% endif %}>Le Coloriste</a>
+      <a href="{{ '/en/support/' | relative_url }}"{% if page.url == "/en/support/" %} aria-current="page"{% endif %}>Support</a>
+      <a href="{{ autre | relative_url }}" lang="fr">Français</a>
+      {%- else %}
       <a href="{{ '/#produits' | relative_url }}">Applications</a>
       {%- for p in produits limit: 3 %}
       <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nom }}</a>
       {%- endfor %}
-      <a href="{{ '/#studio' | relative_url }}">Le studio</a>
+      <a href="{{ '/soutien/' | relative_url }}"{% if page.url == "/soutien/" %} aria-current="page"{% endif %}>Soutien</a>
+      <a href="{{ autre | relative_url }}" lang="en">English</a>
+      {%- endif %}
     </nav>
+    {%- if en %}
+    <a class="btn btn-primary btn-sm" href="mailto:{{ site.courriel }}">Contact us</a>
+    {%- else %}
     <a class="btn btn-primary btn-sm" href="{{ '/#contact' | relative_url }}">Nous écrire</a>
+    {%- endif %}
   </div>
 </header>
 
@@ -62,11 +80,20 @@
 
 <footer>
   <div class="foot-row">
-    <div class="foot-brand"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"><span>© {{ site.annee }} {{ site.title }}. Tous droits réservés.</span></div>
-    <nav class="foot-links" aria-label="Pied de page">
+    <div class="foot-brand"><img src="{{ '/assets/img/' | append: site.logo | relative_url }}" alt="{{ site.title }}"><span>© {{ site.annee }} {{ site.title }}. {% if en %}All rights reserved.{% else %}Tous droits réservés.{% endif %}</span></div>
+    <nav class="foot-links" aria-label="{% if en %}Footer{% else %}Pied de page{% endif %}">
+      {%- if en %}
+      <a href="{{ '/en/le-coloriste/' | relative_url }}">Le Coloriste</a>
+      <a href="{{ '/en/support/' | relative_url }}">Support</a>
+      <a href="{{ '/en/privacy/' | relative_url }}">Privacy</a>
+      <a href="{{ autre | relative_url }}" lang="fr">Français</a>
+      {%- else %}
       <a href="{{ '/#produits' | relative_url }}">Applications</a>
       <a href="{{ '/#studio' | relative_url }}">Le studio</a>
-      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+      <a href="{{ '/soutien/' | relative_url }}">Soutien</a>
+      <a href="{{ '/confidentialite/' | relative_url }}">Confidentialité</a>
+      <a href="{{ autre | relative_url }}" lang="en">English</a>
+      {%- endif %}
     </nav>
   </div>
 </footer>

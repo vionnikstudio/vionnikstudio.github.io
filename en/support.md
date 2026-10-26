@@ -1,13 +1,12 @@
 ---
-title: Support · Studio Vionnik
+layout: page
 lang: en
+titre: "Support"
+surtitre: "Help"
+intro: "Need help? We're here. We answer personally, in English or French."
+permalink: /en/support/
+autre_langue: "/soutien/"
 ---
-
-[← Home](index.md) · [Français](../soutien.md)
-
-# Support
-
-Need help? We're here.
 
 ## Contact us
 
@@ -57,8 +56,4 @@ Open the Mac App Store with the same Apple Account, click your name in the botto
 Purchases are made through Apple, which handles refunds. Request one at [reportaproblem.apple.com](https://reportaproblem.apple.com).
 
 **Are my colors sent to Studio Vionnik?**
-No. Le Coloriste collects no data. See our [Privacy Policy](privacy.md).
-
----
-
-<small>© 2026 Studio Vionnik · [Privacy Policy](privacy.md)</small>
+No. Le Coloriste collects no data. See our [Privacy Policy](/en/privacy/).

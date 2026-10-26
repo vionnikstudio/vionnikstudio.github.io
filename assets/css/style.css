@@ -297,3 +297,34 @@ section[id],div[id]{scroll-margin-top:80px}
   .note{flex-direction:column;align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.btn:hover,a.pcard:hover,.next:hover{transform:none}}
+
+/* ───── Pages de texte (Soutien, Confidentialité, pages anglaises) ───── */
+.page-hero{padding-block:72px 76px}
+.page-hero h1{font-size:clamp(36px,4.6vw,56px)}
+.page-sec{padding-block:72px 96px}
+.texte{max-width:760px}
+.texte > * + *{margin-top:16px}
+.texte h2{font-size:clamp(24px,2.6vw,30px);line-height:1.2;font-weight:800;margin-top:52px}
+.texte h2:first-child{margin-top:0}
+.texte h3{font-size:19px;font-weight:700;margin-top:32px}
+.texte p,.texte li{color:var(--ink-soft)}
+.texte b,.texte strong{color:var(--ink)}
+.texte a{color:var(--accent);font-weight:700}
+.texte a:hover{text-decoration:underline}
+.texte ul,.texte ol{padding-left:22px}
+.texte li + li{margin-top:6px}
+.texte hr{border:0;border-top:1px solid var(--line);margin-block:44px}
+.texte table{width:100%;border-collapse:collapse;font-size:15.5px;display:block;overflow-x:auto}
+.texte th,.texte td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+.texte th{font-family:var(--display);color:var(--ink);background:var(--bg-alt)}
+.texte td{color:var(--ink-soft)}
+.texte td:first-child{color:var(--ink);font-weight:700}
+.texte blockquote{margin:24px 0 0;padding:16px 20px;border-left:4px solid var(--accent);background:var(--bg-alt);border-radius:0 12px 12px 0}
+.texte .app-card{display:flex;gap:20px;align-items:center;margin-top:24px;padding:22px 24px;border:1px solid var(--line);border-radius:20px;background:var(--surface)}
+.texte .app-card img{width:72px;height:72px;border-radius:16px;flex:none}
+.texte .app-card p{margin:4px 0 0}
+@media (max-width:640px){
+  .page-hero{padding-block:44px 52px}
+  .page-sec{padding-block:48px 64px}
+  .texte .app-card{flex-direction:column;align-items:flex-start}
+}

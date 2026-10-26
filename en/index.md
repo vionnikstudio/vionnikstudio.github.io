@@ -1,42 +1,33 @@
 ---
-title: Studio Vionnik
+layout: page
 lang: en
+titre: "Simple apps, built to last."
+surtitre: "Studio Vionnik · Mac apps"
+intro: "Studio Vionnik designs and publishes Mac apps made for the people who use them. Native tools, no ads, no subscriptions: they open and they just work."
+bouton_texte: "Discover Le Coloriste"
+bouton_lien: "/en/le-coloriste/"
 permalink: /en/
----
-
-![Studio Vionnik](../assets/logo-studio-vionnik.png)
-
-**Mac app studio**
-
-[Le Coloriste](le-coloriste.md) · [Support](support.md) · [Privacy](privacy.md) · [Français](../index.md)
-
----
-
-# Simple apps, built to last.
-
-Studio Vionnik designs and publishes Mac apps made for the people who use them. Native tools, no ads, no subscriptions: they open and they just work.
-
+autre_langue: "/"
 ---
 
 ## Our app
 
-<img src="../assets/le-coloriste-icone.png" alt="Le Coloriste icon" width="96">
+<div class="app-card" markdown="1">
+<img src="/assets/produits/le-coloriste/icone-2.png" alt="Le Coloriste icon">
+<div markdown="1">
+**Le Coloriste** · Color picker and swatches for Mac
 
-### Le Coloriste
+Pick a color anywhere on your screen, save it to a swatch library and export it to Photoshop, macOS or a PDF color sheet. Coming soon to the Mac App Store.
 
-**Color picker and swatches for Mac · CA$9.99, one-time purchase**
-
-An eyedropper that picks a color anywhere on your screen, saves it to a swatch library and exports it to Photoshop, macOS or a PDF color sheet.
-
-**[See the Le Coloriste page →](le-coloriste.md)**
+[See Le Coloriste →](/en/le-coloriste/)
+</div>
+</div>
 
 *More apps are on the way.*
 
----
-
 ## The studio
 
-An independent software publisher from Québec. One brand, one way of working. Vionnik, in three syllables:
+An independent software publisher from Québec. One brand, very different apps, one way of working. Vionnik, in three syllables:
 
 | | | |
 |---|---|---|
@@ -44,24 +35,16 @@ An independent software publisher from Québec. One brand, one way of working. V
 | **ON** | Usability and accessibility | It opens and it works. Designed for everyone, no manual needed. |
 | **NIK** | Engineering and care | Careful development, stable and reliable apps, one version after another. |
 
-**With two Ns.** If you're looking for us, it's V-I-O-N-N-I-K.
+**With two Ns.** If you're looking for us, it's V-I-O-N-N-I-K. The double N makes the name unique and easy to find.
 
 ## Our principles
 
-- **One thing at a time.** Every screen has an obvious purpose. No hidden menus, no technical jargon.
-- **No subscription traps.** One-time purchase, no ads, no account required.
-- **Made for the Mac.** Native apps that follow macOS conventions.
-
----
+- **One thing at a time.** Every screen has an obvious purpose. No hidden menus, tiny icons or technical jargon.
+- **Useful every day.** Keep Studio Vionnik apps close at hand to make everyday tasks simpler.
+- **Made for the Mac.** Native apps that follow macOS conventions and run on recent Macs.
 
 ## Get in touch
 
-A question, a suggestion, an idea? Write to us. We answer personally.
+A question about an app, a suggestion, an idea? Write to us. We answer personally.
 
-**[bonjour@vionnik.com](mailto:bonjour@vionnik.com)**
-
-Need help with an app? Visit the [Support](support.md) page.
-
----
-
-<small>© 2026 Studio Vionnik · Québec · [Privacy Policy](privacy.md) · [Support](support.md)</small>
+**[bonjour@vionnik.com](mailto:bonjour@vionnik.com)** · Need help with an app? Visit the [Support](/en/support/) page.

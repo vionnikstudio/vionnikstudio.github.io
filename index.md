@@ -11,7 +11,7 @@ layout: accueil
 # Indique le nom de la fiche du produit à mettre en vedette
 # (le nom du fichier dans _produits, sans « .md »).
 annonce:
-  produit: "le_coloriste"
+  produit: "le-coloriste"
   # Les trois lignes suivantes sont facultatives : laisse "" et le
   # site écrit l'annonce tout seul à partir de la fiche du produit.
   surtitre: "Les artistes vont l'adorer!"
@@ -56,7 +56,7 @@ principes:
     texte: "Chaque écran a un rôle évident. On retire les menus cachés, les petites icônes et le vocabulaire technique."
   - icone: "soleil"
     titre: "Utiles au quotidien"
-    texte: "Gardez les applications de Vionnik Studio à portée de main pour vous simplifier la vie chaque jour."
+    texte: "Gardez les applications de Studio Vionnik à portée de main pour vous simplifier la vie chaque jour."
   - icone: "ecran"
     titre: "Fait pour le Mac"
     texte: "Des applications natives qui suivent les conventions de macOS et fonctionnent sur les Mac récents."

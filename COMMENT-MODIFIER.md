@@ -1,4 +1,4 @@
-# Comment modifier le site Vionnik
+# Comment modifier le site Studio Vionnik
 
 Ce site se met en page tout seul. Toi, tu modifies seulement des **fiches de texte**. GitHub reconstruit le site environ **une minute** après chaque modification.
 
@@ -9,6 +9,8 @@ Ce site se met en page tout seul. Toi, tu modifies seulement des **fiches de tex
 | Ajouter une application                     | copier `modele-produit.md`         |
 | Changer le nom, le logo, le courriel ou l'année | `_config.yml`                  |
 | Remplacer une image                         | `assets/produits/nom-du-produit/`  |
+| Modifier la page Soutien ou Confidentialité | `soutien.md` ou `confidentialite.md` |
+| Modifier les pages en anglais               | le dossier `en`                     |
 
 ---
 
@@ -57,11 +59,11 @@ Les fiches sont écrites dans un format très simple. Pour ne rien briser :
 | Pour modifier…                  | Clique sur…                              |
 |---------------------------------|------------------------------------------|
 | l'accueil                       | `index.md`                               |
-| PicFitBox (textes, prix, statut, spécial) | le dossier `_produits`, puis `picfitbox.md` |
+| Le Coloriste (textes, prix, statut, spécial) | le dossier `_produits`, puis `le-coloriste.md` |
 | le courriel ou l'année          | `_config.yml`                            |
-| les images de PicFitBox         | `assets` → `produits` → `picfitbox`      |
+| les images du Coloriste         | `assets` → `produits` → `le-coloriste`   |
 
-Astuce : sur la page du dépôt, appuie sur la touche **T** et tape `picfitbox` : GitHub trouve le fichier pour toi.
+Astuce : sur la page du dépôt, appuie sur la touche **T** et tape `coloriste` : GitHub trouve le fichier pour toi.
 
 **Modifier et enregistrer**
 
@@ -79,14 +81,14 @@ Dans `index.md`, la section `annonce` choisit l'application mise en vedette :
 
 ```
 annonce:
-  produit: "picfitbox"
+  produit: "le-coloriste"
   surtitre: ""
   titre: ""
-  texte: "La première application de Vionnik place tes images…"
+  texte: "Une pipette pour Mac qui fonctionne même en arrière-plan…"
 ```
 
 - `produit` : le nom de la fiche, sans `.md`.
-- Laisse `surtitre` et `titre` vides : le site écrit tout seul « PicFitBox arrive bientôt sur Mac. » tant que l'app est à venir, puis « PicFitBox est arrivé sur Mac. » quand elle devient disponible.
+- Laisse `surtitre` et `titre` vides : le site écrit tout seul « Le Coloriste arrive bientôt sur Mac. » tant que l'app est à venir, puis « Le Coloriste est arrivé sur Mac. » quand elle devient disponible.
 - Tu peux aussi écrire ton propre titre : il remplacera le titre automatique.
 
 ---
@@ -124,7 +126,7 @@ rabais_texte: "Vendredi fou :"
 
 Le site affiche alors automatiquement, **seulement entre ces deux dates** :
 
-- un bandeau orange en haut de **toutes** les pages : « −25 % Vendredi fou : PicFitBox jusqu'au 1er décembre » ;
+- un bandeau orange en haut de **toutes** les pages : « −25 % Vendredi fou : Le Coloriste jusqu'au 1er décembre » ;
 - une pastille « −25 % » sur la carte de l'accueil ;
 - l'ancien prix barré et le nouveau prix, calculé tout seul, sur l'accueil et sur la page du produit.
 
@@ -151,7 +153,7 @@ La carte de l'accueil, le lien dans le menu et le lien « Application suivante �
 
 - **Remplacer une image** : téléverse un fichier **portant le même nom** dans le même dossier ; GitHub remplace l'ancien.
 - **Formats** : `.webp`, `.png` ou `.jpg`. Les captures avec fond transparent (Cmd + Maj + 4, barre d'espace, clic sur la fenêtre) sont les plus belles.
-- **Poids** : vise moins de 300 Ko par image. Une largeur de 1400 px suffit pour une capture de fenêtre. (PicFitBox est parfait pour ça !)
+- **Poids** : vise moins de 300 Ko par image. Une largeur de 1400 px suffit pour une capture de fenêtre. (PicFitBox sera parfait pour ça !)
 - **Icône** : carrée, 512 × 512 px.
 - Dans une section, ajoute `cadre: true` pour encadrer une capture qui n'a pas de fond transparent.
 
@@ -159,15 +161,15 @@ La carte de l'accueil, le lien dans le menu et le lien « Application suivante �
 
 ## 9. Changer le logo ou le nom de l'entreprise
 
-**Le nom** (« Vionnik Studio ») : dans `_config.yml`, modifie `title`. Il change partout d'un coup : onglet du navigateur, pied de page, « Une application Vionnik Studio »…
+**Le nom** (« Studio Vionnik ») : dans `_config.yml`, modifie `title`. Il change partout d'un coup : onglet du navigateur, pied de page, « Une application Studio Vionnik »…
 
 **Le logo** :
 
 1. Prépare un **PNG au fond transparent**, avec le logo **en noir ou très foncé** (le site l'inverse tout seul en blanc en mode sombre).
 2. **Recadre-le au plus près** du dessin, sans marge vide autour : sinon il paraîtra plus petit.
 3. Hauteur conseillée : environ 200 px. La largeur n'a pas d'importance.
-4. Téléverse-le dans `assets/img` (Add file → Upload files), par exemple sous le nom `vionnik-studio.png`.
-5. Dans `_config.yml`, remplace `logo: "vionnik.png"` par `logo: "vionnik-studio.png"`.
+4. Téléverse-le dans `assets/img` (Add file → Upload files), par exemple sous le nom `logo-studio-vionnik.png`.
+5. Dans `_config.yml`, inscris ce nom à la ligne `logo:`, par exemple `logo: "logo-studio-vionnik.png"`.
 
 Le site s'adapte à n'importe quelle largeur : le logo garde toujours la même hauteur (26 px dans le menu, 17 px dans le pied de page) et ses proportions. Un logo très large est réduit automatiquement pour ne jamais déborder, même sur iPhone.
 
@@ -181,7 +183,30 @@ Pour les champs `icone:` des points forts, des fonctions et des principes :
 
 ---
 
-## 11. Si quelque chose ne marche plus
+## 11. Les pages Soutien, Confidentialité et la version anglaise
+
+Ces pages sont du texte simple, sous la ligne `---` du haut du fichier :
+
+| Page | Fichier | Adresse |
+|---|---|---|
+| Soutien | `soutien.md` | `/soutien/` |
+| Politique de confidentialité | `confidentialite.md` | `/confidentialite/` |
+| Accueil en anglais | `en/index.md` | `/en/` |
+| Le Coloriste en anglais | `en/le-coloriste.md` | `/en/le-coloriste/` |
+| Support (anglais) | `en/support.md` | `/en/support/` |
+| Privacy Policy (anglais) | `en/privacy.md` | `/en/privacy/` |
+
+- Le haut du fichier (`titre`, `surtitre`, `intro`) remplit la bande foncée en haut de la page.
+- Le texte se met en forme tout seul : `## Titre` fait un titre, `**mot**` met en gras, une ligne qui commence par `- ` fait une liste.
+- `autre_langue` indique la page correspondante dans l'autre langue : c'est là que mènent les liens « English » et « Français » du menu.
+- **Quand tu modifies une page en français, fais la même modification en anglais.**
+- Ce qui est entre crochets `[ ]` dans les deux politiques de confidentialité est à remplacer avant de donner les adresses à Apple.
+
+Pour l'App Store : fiche en français → `/soutien/` et `/confidentialite/` ; fiche en anglais → `/en/support/` et `/en/privacy/`.
+
+---
+
+## 12. Si quelque chose ne marche plus
 
 - **Un X rouge dans l'onglet Actions** : il y a presque toujours un guillemet oublié ou un espace en trop au début d'une ligne. Ouvre le fichier que tu viens de modifier et compare avec une ligne voisine.
 - **Revenir en arrière** : ouvre le fichier, clique sur **History**, choisis la version d'avant, copie son contenu et recolle-le.

@@ -1,12 +1,11 @@
 ---
-title: Soutien · Studio Vionnik
+layout: page
+titre: "Soutien"
+surtitre: "Aide"
+intro: "Besoin d'aide ? On est là. Nous répondons nous-mêmes, en français ou en anglais."
+permalink: /soutien/
+autre_langue: "/en/support/"
 ---
-
-[← Accueil](index.md) · [English](en/support.md)
-
-# Soutien
-
-Besoin d'aide ? On est là.
 
 ## Nous joindre
 
@@ -56,8 +55,4 @@ Ouvre le Mac App Store avec le même compte Apple, clique sur ton nom en bas à 
 Les achats sont faits auprès d'Apple, qui gère les remboursements. Fais ta demande sur [reportaproblem.apple.com](https://reportaproblem.apple.com).
 
 **Mes couleurs sont-elles envoyées à Studio Vionnik ?**
-Non. Le Coloriste ne recueille aucune donnée. Voir notre [politique de confidentialité](confidentialite.md).
-
----
-
-<small>© 2026 Studio Vionnik · [Politique de confidentialité](confidentialite.md)</small>
+Non. Le Coloriste ne recueille aucune donnée. Voir notre [politique de confidentialité](/confidentialite/).

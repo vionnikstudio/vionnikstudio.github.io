@@ -1,11 +1,12 @@
 ---
-title: Privacy Policy · Studio Vionnik
+layout: page
 lang: en
+titre: "Privacy Policy"
+surtitre: "Privacy"
+intro: "Le Coloriste collects no data. Here is, in detail, how we protect your information."
+permalink: /en/privacy/
+autre_langue: "/confidentialite/"
 ---
-
-[← Home](index.md) · [Français](../confidentialite.md)
-
-# Privacy Policy
 
 Last updated: [publication date]
 
@@ -108,7 +109,3 @@ If you are not satisfied with our response, you may file a complaint with the **
 **Changes:** if we change this policy, we will post the new version on this page with its update date. For a significant change, we will also mention it in the release notes.
 
 **Contact us:** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com) · [full mailing address]
-
----
-
-<small>© 2026 Studio Vionnik · [Support](support.md)</small>

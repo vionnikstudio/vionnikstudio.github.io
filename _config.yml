@@ -5,9 +5,9 @@
 #  à reconstruire le site.
 # ─────────────────────────────────────────────────────────────
 
-title: "Vionnik Studio"           # le nom affiché partout sur le site
-description: "Vionnik Studio, studio d'applications pour Mac."
-logo: "vionnik-studio.png"                # fichier du logo, dans assets/img (PNG sombre sur fond transparent)
+title: "Studio Vionnik"           # le nom affiché partout sur le site
+description: "Studio Vionnik, studio d'applications pour Mac."
+logo: "logo-studio-vionnik.png"                # fichier du logo, dans assets/img (PNG sombre sur fond transparent)
 courriel: "bonjour@vionnik.com"
 annee: "2026"
 

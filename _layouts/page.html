@@ -1,0 +1,24 @@
+---
+layout: defaut
+---
+{%- comment -%}
+  Gabarit des pages de texte : Soutien, Confidentialité et les pages anglaises.
+  Le haut de la page vient de « titre », « surtitre » et « intro » ;
+  le reste est le texte écrit sous la ligne --- du fichier.
+{%- endcomment -%}
+<section class="hero page-hero">
+  <div class="wrap">
+    {%- if page.surtitre %}<span class="eyebrow">{{ page.surtitre }}</span>{% endif %}
+    <h1>{{ page.titre }}</h1>
+    {%- if page.intro %}<p class="hero-sub">{{ page.intro }}</p>{% endif %}
+    {%- if page.bouton_texte %}
+    <div class="hero-ctas"><a class="btn btn-white" href="{{ page.bouton_lien }}">{{ page.bouton_texte }}</a></div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="sec page-sec">
+  <div class="wrap texte">
+{{ content }}
+  </div>
+</section>

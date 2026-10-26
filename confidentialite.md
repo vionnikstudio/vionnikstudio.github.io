@@ -1,10 +1,11 @@
 ---
-title: Politique de confidentialité · Studio Vionnik
+layout: page
+titre: "Politique de confidentialité"
+surtitre: "Confidentialité"
+intro: "Le Coloriste ne recueille aucune donnée. Voici, en détail, comment nous protégeons vos renseignements."
+permalink: /confidentialite/
+autre_langue: "/en/privacy/"
 ---
-
-[← Accueil](index.md) · [English](en/privacy.md)
-
-# Politique de confidentialité
 
 Dernière mise à jour : [date de publication]
 
@@ -105,7 +106,3 @@ Si vous n'êtes pas satisfait de notre réponse, vous pouvez porter plainte aupr
 **Modifications :** si nous modifions cette politique, nous publierons la nouvelle version sur cette page avec sa date de mise à jour. Pour un changement important, nous l'indiquerons aussi dans les notes de version.
 
 **Nous joindre :** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com) · [adresse postale complète]
-
----
-
-<small>© 2026 Studio Vionnik · [Soutien](soutien.md)</small>

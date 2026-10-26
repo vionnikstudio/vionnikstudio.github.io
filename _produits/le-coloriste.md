@@ -4,11 +4,12 @@ version: "1.5.3"
 categorie: "UN NUANCIER, PAS UNE PILE DE CAPTURES"
 couleur: "#1D7FC4"
 icone: "icone-2.png"
-ordre: 3
+ordre: 1
+autre_langue: "/en/le-coloriste/"   # page anglaise correspondante
 
 statut: "a-venir"
-sortie: ""
-date_lancement: "30 novembre 2026"
+sortie: "30 novembre 2026"
+date_lancement: "2026-11-30"   # format année-mois-jour, pour le compte à rebours
 
 resume: "Prélève une couleur. N'importe où."
 
