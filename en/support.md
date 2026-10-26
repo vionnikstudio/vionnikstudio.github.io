@@ -12,7 +12,7 @@ autre_langue: "/soutien/"
 
 **Email: [soutien@vionnik.com](mailto:soutien@vionnik.com)**
 
-We answer personally, in English or French, usually within 2 business days.
+We usually reply within 2 business days.
 
 Studio Vionnik · Québec, Canada
 

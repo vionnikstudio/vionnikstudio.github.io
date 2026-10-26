@@ -54,6 +54,11 @@ layout: defaut
   </div>
   {%- endif %}
 
+  {%- if p.galerie %}
+  {%- assign galerie_dossier = img | append: "galerie/" -%}
+  {% include galerie.html items=p.galerie dossier=galerie_dossier titre=p.galerie_titre %}
+  {%- endif %}
+
   {%- if p.fonctions %}
   <section class="sec" id="fonctions">
     <div class="wrap">

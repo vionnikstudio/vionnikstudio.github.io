@@ -22,6 +22,19 @@ infos:
   - "Application macOS"
   - "macOS 14 (Sonoma) et plus récent"
 
+# ── Galerie d'images (diaporama) ──────────────────────────────
+# Dépose les images dans assets/produits/le-coloriste/galerie/
+# Pour en ajouter une : copie un élément complet (les 2 lignes) et
+# change le nom du fichier et la légende. L'ordre ici = l'ordre affiché.
+galerie_titre: "Le Coloriste au travail"
+galerie:
+  - image: "galerie-1.webp"
+    legende: "Le nuancier d'Henri reste à côté de la planche pendant toute la mise en couleur."
+  - image: "galerie-2.webp"
+    legende: "Un nuancier par personnage : la peau, la barbe, la chemise et la cravate de Victor."
+  - image: "galerie-3.webp"
+    legende: "Passe d'un personnage à l'autre en un clic, sans quitter ton logiciel de dessin."
+
 points:
   - icone: "ecran"
     texte: "Prélèvement partout à l'écran, même en arrière-plan"

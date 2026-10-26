@@ -5,6 +5,7 @@ layout: defaut
   Gabarit des pages de texte : Soutien, Confidentialité et les pages anglaises.
   Le haut de la page vient de « titre », « surtitre » et « intro » ;
   le reste est le texte écrit sous la ligne --- du fichier.
+  Une page peut aussi avoir une « galerie » (voir en/le-coloriste.md).
 {%- endcomment -%}
 <section class="hero page-hero">
   <div class="wrap">
@@ -16,6 +17,10 @@ layout: defaut
     {%- endif %}
   </div>
 </section>
+
+{%- if page.galerie %}
+{% include galerie.html items=page.galerie dossier=page.galerie_dossier titre=page.galerie_titre langue=page.lang %}
+{%- endif %}
 
 <section class="sec page-sec">
   <div class="wrap texte">

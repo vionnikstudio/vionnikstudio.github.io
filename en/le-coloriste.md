@@ -8,6 +8,19 @@ bouton_texte: "Notify me at launch"
 bouton_lien: "mailto:bonjour@vionnik.com?subject=Notify%20me%20when%20Le%20Coloriste%20launches"
 permalink: /en/le-coloriste/
 autre_langue: "/le-coloriste/"
+
+# ── Image gallery (slideshow) ─────────────────────────────────
+# Same images as the French page, with English captions.
+# To add one: copy a full item (both lines) and change the file name and caption.
+galerie_titre: "Le Coloriste at work"
+galerie_dossier: "/assets/produits/le-coloriste/galerie/"
+galerie:
+  - image: "galerie-1.webp"
+    legende: "Henri's swatches stay right next to the page for the whole coloring session."
+  - image: "galerie-2.webp"
+    legende: "One swatch set per character: Victor's skin, beard, shirt and tie."
+  - image: "galerie-3.webp"
+    legende: "Switch from one character to the next in one click, without leaving your drawing app."
 ---
 
 ![Le Coloriste main window with its swatch library](/assets/produits/le-coloriste/capture-principale.png)

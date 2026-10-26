@@ -67,4 +67,31 @@
       } catch (e) { repli(); }
     });
   }
+
+  // Diaporama d'images (galerie des pages d'application)
+  document.querySelectorAll("[data-galerie]").forEach(function (g) {
+    var piste = g.querySelector(".galerie-piste");
+    var diapos = piste.querySelectorAll(".galerie-diapo");
+    var points = g.querySelectorAll(".galerie-points button");
+    if (diapos.length < 2) return;
+    function position() { return Math.round(piste.scrollLeft / piste.clientWidth); }
+    function aller(i) {
+      i = (i + diapos.length) % diapos.length;
+      piste.scrollTo({ left: i * piste.clientWidth, behavior: "smooth" });
+    }
+    function maj() {
+      var i = position();
+      points.forEach(function (b, j) { b.setAttribute("aria-current", i === j ? "true" : "false"); });
+    }
+    var prec = g.querySelector(".galerie-prec"), suiv = g.querySelector(".galerie-suiv");
+    if (prec) prec.addEventListener("click", function () { aller(position() - 1); });
+    if (suiv) suiv.addEventListener("click", function () { aller(position() + 1); });
+    points.forEach(function (b, i) { b.addEventListener("click", function () { aller(i); }); });
+    piste.addEventListener("scroll", function () { window.requestAnimationFrame(maj); });
+    piste.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); aller(position() + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); aller(position() - 1); }
+    });
+    maj();
+  });
 })();

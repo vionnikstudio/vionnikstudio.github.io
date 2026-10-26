@@ -9,6 +9,7 @@ Ce site se met en page tout seul. Toi, tu modifies seulement des **fiches de tex
 | Ajouter une application                     | copier `modele-produit.md`         |
 | Changer le nom, le logo, le courriel ou l'année | `_config.yml`                  |
 | Remplacer une image                         | `assets/produits/nom-du-produit/`  |
+| Ajouter une image au diaporama              | `assets/produits/nom-du-produit/galerie/` + la fiche (voir section 8) |
 | Modifier la page Soutien ou Confidentialité | `soutien.md` ou `confidentialite.md` |
 | Modifier les pages en anglais               | le dossier `en`                     |
 
@@ -157,6 +158,27 @@ La carte de l'accueil, le lien dans le menu et le lien « Application suivante �
 - **Icône** : carrée, 512 × 512 px.
 - Dans une section, ajoute `cadre: true` pour encadrer une capture qui n'a pas de fond transparent.
 
+### Le diaporama (galerie d'images)
+
+Sur la page d'une application, le diaporama affiche autant d'images que tu veux, avec des flèches, des points et une légende sous chaque image. On peut aussi glisser du doigt sur iPhone.
+
+1. **Téléverse l'image** dans `assets/produits/le-coloriste/galerie/` (Add file → Upload files). Format conseillé : `.webp`, `.png` ou `.jpg`, environ 1600 px de large, moins de 300 Ko. Le format 16:9 (comme une capture d'écran) remplit tout le cadre.
+2. **Ajoute-la dans la fiche** `_produits/le-coloriste.md`, sous `galerie:`. Copie un élément complet (les 2 lignes) et colle-le juste en dessous :
+
+```
+galerie:
+  - image: "galerie-1.webp"
+    legende: "Le nuancier d'Henri reste à côté de la planche."
+  - image: "galerie-4.webp"
+    legende: "Ta nouvelle légende."
+```
+
+3. **Fais la même chose en anglais** dans `en/le-coloriste.md` (même nom de fichier, légende en anglais). Les deux pages utilisent le même dossier d'images.
+
+- L'ordre dans la liste = l'ordre du diaporama.
+- Pour retirer une image, supprime ses 2 lignes dans les deux fiches.
+- `galerie_titre` change le titre au-dessus du diaporama.
+
 ---
 
 ## 9. Changer le logo ou le nom de l'entreprise
@@ -185,8 +207,6 @@ Pour les champs `icone:` des points forts, des fonctions et des principes :
 
 ## 11. Les pages Soutien, Confidentialité et la version anglaise
 
-Ces pages sont du texte simple, sous la ligne `---` du haut du fichier :
-
 | Page | Fichier | Adresse |
 |---|---|---|
 | Soutien | `soutien.md` | `/soutien/` |
@@ -197,8 +217,8 @@ Ces pages sont du texte simple, sous la ligne `---` du haut du fichier :
 | Privacy Policy (anglais) | `en/privacy.md` | `/en/privacy/` |
 
 - Le haut du fichier (`titre`, `surtitre`, `intro`) remplit la bande foncée en haut de la page.
-- Le texte se met en forme tout seul : `## Titre` fait un titre, `**mot**` met en gras, une ligne qui commence par `- ` fait une liste.
-- `autre_langue` indique la page correspondante dans l'autre langue : c'est là que mènent les liens « English » et « Français » du menu.
+- Le texte sous la ligne `---` se met en forme tout seul : `## Titre` fait un titre, `**mot**` met en gras, une ligne qui commence par `- ` fait une liste.
+- `autre_langue` indique la page correspondante dans l'autre langue : c'est là que mènent les liens « English » et « Français ».
 - **Quand tu modifies une page en français, fais la même modification en anglais.**
 - Ce qui est entre crochets `[ ]` dans les deux politiques de confidentialité est à remplacer avant de donner les adresses à Apple.
 

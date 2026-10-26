@@ -11,7 +11,7 @@ autre_langue: "/en/support/"
 
 **Courriel : [soutien@vionnik.com](mailto:soutien@vionnik.com)**
 
-Nous répondons nous-mêmes, en français ou en anglais, habituellement en moins de 2 jours ouvrables.
+Nous répondons habituellement en moins de 2 jours ouvrables.
 
 Studio Vionnik · Québec, Canada
 
@@ -20,7 +20,7 @@ Studio Vionnik · Québec, Canada
 Indique-nous, si possible :
 
 1. la version du Coloriste (menu **Le Coloriste › À propos du Coloriste**) ;
-2. ta version de macOS (menu **› À propos de ce Mac**) ;
+2. ta version de macOS (menu ** › À propos de ce Mac**) ;
 3. ton type de Mac : Apple Silicon ou Intel ;
 4. ce que tu faisais quand le problème est arrivé, avec une capture d'écran si possible.
 

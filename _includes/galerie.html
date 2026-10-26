@@ -1,0 +1,37 @@
+{%- comment -%}
+  Diaporama d'images. Les images et les légendes viennent de la liste
+  « galerie » de la fiche (ou de la page). Rien à modifier ici.
+{%- endcomment -%}
+{%- assign diapos = include.items -%}
+{%- if include.langue == "en" -%}
+  {%- assign t_sur = "In pictures" -%}{%- assign t_prec = "Previous image" -%}{%- assign t_suiv = "Next image" -%}{%- assign t_img = "Image" -%}{%- assign t_zone = "Image gallery" -%}
+{%- else -%}
+  {%- assign t_sur = "En images" -%}{%- assign t_prec = "Image précédente" -%}{%- assign t_suiv = "Image suivante" -%}{%- assign t_img = "Image" -%}{%- assign t_zone = "Galerie d'images" -%}
+{%- endif -%}
+{%- if diapos and diapos.size > 0 %}
+<section class="sec galerie-sec" id="galerie">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">{{ t_sur }}</span>
+      {%- if include.titre %}<h2>{{ include.titre }}</h2>{% endif %}
+    </div>
+    <div class="galerie" data-galerie>
+      <div class="galerie-piste" tabindex="0" role="region" aria-label="{{ t_zone }}">
+        {%- for d in diapos %}
+        <figure class="galerie-diapo">
+          <img src="{{ include.dossier | append: d.image | relative_url }}" alt="{{ d.legende | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+          {%- if d.legende %}<figcaption>{{ d.legende }}</figcaption>{% endif %}
+        </figure>
+        {%- endfor %}
+      </div>
+      {%- if diapos.size > 1 %}
+      <button class="galerie-btn galerie-prec" type="button" aria-label="{{ t_prec }}">‹</button>
+      <button class="galerie-btn galerie-suiv" type="button" aria-label="{{ t_suiv }}">›</button>
+      <div class="galerie-points">
+        {%- for d in diapos %}<button type="button" aria-label="{{ t_img }} {{ forloop.index }}"></button>{% endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
