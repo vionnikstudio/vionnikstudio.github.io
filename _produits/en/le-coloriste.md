@@ -110,7 +110,7 @@ faq:
     reponse: "Yes. The eyedropper picks a color anywhere on screen, even when another app is in front."
   - question: "Do I need an account?"
     reponse: "No. Le Coloriste is a one-time purchase on the Mac App Store, with no subscription and no account to create."
- - question: "Does it work with my drawing app?"
+  - question: "Does it work with my drawing app?"
     reponse: "Yes. Le Coloriste picks colors straight from your screen, so it works with Clip Studio Paint, Photoshop, Affinity, Figma, a web browser or any other app."
   - question: "Can I keep a separate swatch set for each project?"
     reponse: "Yes, as many as you like. A list can hold the colors of a comic character, a background, a client's brand, a website, a photo shoot or even a room you're repainting. Switch between them in one click; categories and projects help you find everything, even with hundreds of colors."
