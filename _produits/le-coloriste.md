@@ -104,4 +104,8 @@ faq:
     reponse: "Oui. La pipette prélève une couleur n'importe où à l'écran, même quand une autre application est au premier plan."
   - question: "Faut-il un compte pour l'utiliser ?"
     reponse: "Non. Le Coloriste s'achète une seule fois sur le Mac App Store, sans abonnement ni compte à créer."
+  - question: "Fonctionne-t-il avec mon logiciel de dessin ?"
+    reponse: "Oui. Le Coloriste prélève les couleurs directement à l'écran : il fonctionne avec Clip Studio Paint, Photoshop, Affinity, Figma, un navigateur web ou n'importe quelle autre application."
+  - question: "Puis-je avoir un nuancier différent pour chaque personnage ?"
+    reponse: "Oui. Crée une liste par personnage (« Henri », « Victor »…) et passe de l'une à l'autre en un clic. Les catégories et les projets t'aident à tout retrouver, même avec des centaines de couleurs."
 ---
