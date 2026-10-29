@@ -7,7 +7,7 @@ permalink: /confidentialite/
 autre_langue: "/en/privacy/"
 ---
 
-Dernière mise à jour : [date de publication]
+Dernière mise à jour : 28 octobre 2026
 
 ## 1. Qui nous sommes et ce que couvre cette politique
 
@@ -23,10 +23,10 @@ Elle est rédigée pour respecter la *Loi sur la protection des renseignements p
 
 ## 2. Personne responsable de la protection des renseignements personnels
 
-- **Nom :** [Claude Ferland]
-- **Titre :** [Associé(e), Studio Vionnik]
-- **Courriel :** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com)
-- **Adresse :** [600 rue Yves Thériault, Lévis (Québec)  G6W 8C1]
+- **Nom :** Claude Ferland
+- **Titre :** Associé(e), Studio Vionnik
+- **Courriel :** confidentialite@vionnik.com (mailto:confidentialite@vionnik.com)
+- **Adresse :** 600 rue Yves Thériault, Lévis (Québec)  G6W 8C1
 
 Cette personne veille au respect de cette politique et répond à toute question, demande d'accès ou plainte.
 
