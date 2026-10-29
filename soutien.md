@@ -9,7 +9,7 @@ autre_langue: "/en/support/"
 
 ## Nous joindre
 
-**Courriel : [soutien@vionnik.com](mailto:soutien@vionnik.com)**
+**Courriel : [support@vionnik.com](mailto:support@vionnik.com)**
 
 Nous répondons habituellement en moins de 2 jours ouvrables.
 
