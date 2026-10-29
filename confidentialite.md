@@ -23,10 +23,10 @@ Elle est rédigée pour respecter la *Loi sur la protection des renseignements p
 
 ## 2. Personne responsable de la protection des renseignements personnels
 
-- **Nom :** [Prénom Nom]
+- **Nom :** [Claude Ferland]
 - **Titre :** [Associé(e), Studio Vionnik]
 - **Courriel :** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com)
-- **Adresse :** [adresse postale complète]
+- **Adresse :** [600 rue Yves Thériault, Lévis (Québec)  G6W 8C1]
 
 Cette personne veille au respect de cette politique et répond à toute question, demande d'accès ou plainte.
 
