@@ -72,7 +72,7 @@ Nous ne vendons et ne partageons aucun renseignement personnel à des fins comme
 | Tiers | Rôle | Lieu des serveurs |
 |---|---|---|
 | Apple | Vente, paiement, mises à jour, rapports de plantage, iCloud | États-Unis et ailleurs |
-| [Fournisseur courriel] | Réception de vos courriels | [à préciser] |
+| Apple | Réception de vos courriels | États-Unis et ailleurs |
 | GitHub | Hébergement du site web | États-Unis |
 
 Certains de ces serveurs sont situés à l'extérieur du Québec. Avant toute communication de renseignements hors du Québec, nous évaluons, comme l'exige la loi, que la protection offerte est adéquate, et nous choisissons des fournisseurs reconnus qui s'engagent à protéger vos renseignements.
@@ -105,4 +105,4 @@ Si vous n'êtes pas satisfait de notre réponse, vous pouvez porter plainte aupr
 
 **Modifications :** si nous modifions cette politique, nous publierons la nouvelle version sur cette page avec sa date de mise à jour. Pour un changement important, nous l'indiquerons aussi dans les notes de version.
 
-**Nous joindre :** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com) · [adresse postale complète]
+**Nous joindre :** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com)
