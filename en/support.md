@@ -21,7 +21,7 @@ Studio Vionnik · Quebec, Canada
 If possible, tell us:
 
 1. your version of Le Coloriste (**Le Coloriste › About Le Coloriste** menu);
-2. your version of macOS (** › About This Mac** menu);
+2. your version of macOS (About This Mac › menu);
 3. your type of Mac: Apple silicon or Intel;
 4. what you were doing when the problem happened, with a screenshot if possible.
 
