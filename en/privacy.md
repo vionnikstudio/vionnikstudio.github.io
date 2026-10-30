@@ -8,7 +8,7 @@ permalink: /en/privacy/
 autre_langue: "/confidentialite/"
 ---
 
-Last updated: [publication date]
+Last updated: October 28, 2026
 
 *This policy is also available in French. In case of any discrepancy, the French version prevails.*
 
@@ -26,10 +26,10 @@ It is written to comply with Québec's *Act respecting the protection of persona
 
 ## 2. Person in charge of the protection of personal information
 
-- **Name:** [First Last]
-- **Title:** [Partner, Studio Vionnik]
-- **Email:** [confidentialite@vionnik.com](mailto:confidentialite@vionnik.com)
-- **Address:** [full mailing address]
+- **Name:** Claude Ferland
+- **Title:** Partner, Studio Vionnik
+- **Email:** confidentialite@vionnik.com(mailto:confidentialite@vionnik.com)
+- **Address:** 600 Yves Theriault Street, Levis Quebec  G6W 8C1
 
 This person ensures this policy is followed and answers any question, access request or complaint.
 
