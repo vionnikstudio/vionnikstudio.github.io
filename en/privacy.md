@@ -62,7 +62,7 @@ We use this data only to fix bugs and improve our apps.
 
 ## 6. Website and email
 
-**Website:** vionnik.com uses no advertising cookies and no tracking tools. The site is hosted by GitHub Pages, which may keep technical logs (such as IP addresses) for security purposes, under its own policy.
+**Website:** vionnik.com uses no cookies and no advertising tracking tools. We measure traffic with Cloudflare Web Analytics, which sets no cookies and cannot identify visitors: it counts page views, countries and referring sites in aggregate. The site is hosted by GitHub Pages, which may keep technical logs (such as IP addresses) for security purposes, under its own policy.
 
 **When you email us:** we receive your email address, your name if it appears and the content of your message. We use them to reply and provide support.
 
