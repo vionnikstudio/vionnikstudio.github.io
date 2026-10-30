@@ -8,12 +8,12 @@
 title: "Studio Vionnik"           # le nom affiché partout sur le site
 description: "Studio Vionnik, studio d'applications pour Mac."
 logo: "logo-studio-vionnik.png"                # fichier du logo, dans assets/img (PNG sombre sur fond transparent)
-courriel: "bonjour@vionnik.com"
+courriel: "info@vionnik.com"
 annee: "2026"
 
 # Adresse complète du site (laisse vide tant que ton nom de domaine
 # n'est pas configuré).
-url: ""
+url: "vionnik.com"
 
 # ───── Ne pas modifier sous cette ligne ─────
 lang: fr
