@@ -59,7 +59,7 @@ Nous utilisons ces données uniquement pour corriger des bogues et améliorer no
 
 ## 6. Site web et courriels
 
-**Site web :** vionnik.com n'utilise ni témoins (cookies) publicitaires ni outil de suivi. Le site est hébergé par GitHub Pages, qui peut conserver des journaux techniques (comme l'adresse IP) pour des raisons de sécurité, selon sa propre politique.
+**Site web :** vionnik.com n'utilise ni témoins (cookies) ni outil de suivi publicitaire. Nous mesurons la fréquentation avec Cloudflare Web Analytics, qui ne dépose aucun témoin et ne permet pas d'identifier les visiteurs : il compte de façon globale les pages vues, le pays et le site d'origine des visites. Le site est hébergé par GitHub Pages, qui peut conserver des journaux techniques (comme l'adresse IP) pour des raisons de sécurité, selon sa propre politique.
 
 **Quand vous nous écrivez :** nous recevons votre adresse courriel, votre nom s'il apparaît et le contenu de votre message. Nous les utilisons pour vous répondre et offrir du soutien.
 
