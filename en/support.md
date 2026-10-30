@@ -10,11 +10,11 @@ autre_langue: "/soutien/"
 
 ## Contact us
 
-**Email: [soutien@vionnik.com](mailto:soutien@vionnik.com)**
+**Email: support@vionnik.com (mailto:support@vionnik.com)**
 
 We usually reply within 2 business days.
 
-Studio Vionnik · Québec, Canada
+Studio Vionnik · Quebec, Canada
 
 ### Reporting a problem
 
