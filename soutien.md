@@ -20,7 +20,7 @@ Studio Vionnik · Québec, Canada
 Indique-nous, si possible :
 
 1. la version du Coloriste (menu **Le Coloriste › À propos du Coloriste**) ;
-2. ta version de macOS (menu pomme› À propos de ce Mac) ;
+2. ta version de macOS (menu pomme › À propos de ce Mac) ;
 3. ton type de Mac : Apple Silicon ou Intel ;
 4. ce que tu faisais quand le problème est arrivé, avec une capture d'écran si possible.
 
