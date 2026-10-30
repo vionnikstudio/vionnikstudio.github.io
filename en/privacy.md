@@ -77,6 +77,7 @@ We do not sell or share any personal information for commercial purposes. The on
 | Apple | Sales, payment, updates, crash reports, iCloud | United States and elsewhere |
 | [Email provider] | Receiving your emails | [to be specified] |
 | GitHub | Website hosting | United States |
+| Cloudflare | Domain management (DNS) and anonymous visit statistics | United States and elsewhere |
 
 Some of these servers are located outside Québec. Before any personal information is communicated outside Québec, we assess, as the law requires, that it will receive adequate protection, and we choose recognized providers committed to protecting it.
 
